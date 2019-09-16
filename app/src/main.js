@@ -26,6 +26,13 @@ axios.defaults.baseURL = "http://127.0.0.1:8080/"
 //2.5注册
 Vue.prototype.axios = axios;
 
+/*
+// 引入rem
+import rem from "./rem.js";
+// 注册 rem
+Vue.use(rem)
+Vue.config.productionTip=false;
+*/
 
 //功能：使用vuex保存共享数据
 //引入第三方模块
