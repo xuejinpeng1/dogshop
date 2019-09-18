@@ -1,4 +1,4 @@
-SET NAMES UTF8;
+﻿SET NAMES UTF8;
 DROP DATABASE IF EXISTS pet;
 CREATE DATABASE pet CHARSET=UTF8;
 USE pet;
@@ -30,7 +30,7 @@ CREATE TABLE mini(
   total VARCHAR(32), 
   details VARCHAR(1024)
 );
-/**水族**/
+/**水族.**/
 CREATE TABLE aquatic(
   aid INT PRIMARY KEY AUTO_INCREMENT,
   ptype VARCHAR(16),
