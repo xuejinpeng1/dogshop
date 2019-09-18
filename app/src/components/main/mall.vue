@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="font-size:0.3rem">
     <div class="two">
       <minitwo
         v-for="(item,index) in rows.data"
@@ -8,7 +8,7 @@
         :leftTitle="item.title"
       ></minitwo>
     </div>
-    <h4>套餐</h4>
+    <h4 style="float:left">套餐</h4>
     <div class="three">
       <minithree
         class="three1"
@@ -29,8 +29,8 @@
         :message1="item.title"
       ></minifour>
     </div>
-    <h4>主粮</h4>
-    <span>更多</span>
+    <h4 style="float:left">主粮</h4>
+    <span style="float:right">更多</span>
     <div>
       <minifive></minifive>
     </div>
@@ -65,14 +65,10 @@ body {
   margin: 0;
   padding: 0;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
   margin: 0;
   padding: 0;
+  font-size: 0.4rem;
 }
 .two {
   display: flex;
