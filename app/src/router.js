@@ -11,7 +11,7 @@ import login from "./components/login/login.vue"
 //2:引入自定义组件 forget.vue
 import forget from "./components/login/forget.vue"
 //3:引入自定义组件 mine.vue
-// import mine from "./components/login/mine.vue"(放到main下的/message,接口删掉了).
+// import mine from "./components/login/mine.vue"(放到main下的/message,接口删掉了)
 //4:引入自定义组件 phone.vue
 import phone from "./components/login/phone.vue"
 
