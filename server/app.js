@@ -1,5 +1,5 @@
 //app.js 服务器端项目
-//1.下载第三方模块
+//1.下载第三方模块.
 //2.将第三方模块引入到当前程序中
 const express = require("express");
 const session = require("express-session");
