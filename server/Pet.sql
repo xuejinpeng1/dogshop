@@ -9,7 +9,7 @@ CREATE TABLE dog(
   did INT PRIMARY KEY AUTO_INCREMENT,#狗狗
   ptype VARCHAR(16), #狗类型(比如：泰迪)
   dimg VARCHAR(16),#图片路径(d01.jpg)格式400*400像素
-  total VARCHAR(32), #总评价(比如泰迪：人气爆棚的聪明玩赏犬)
+  total VARCHAR(32), #总评价(比如泰迪：人气爆棚的聪明玩赏犬.)
   details VARCHAR(1024), #简介
   nature VARCHAR(512)#性格特点
 );
