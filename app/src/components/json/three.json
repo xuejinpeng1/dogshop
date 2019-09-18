@@ -1,0 +1,25 @@
+{
+    "data1":[
+      {
+        "id":1,
+        "imgurl1":"../../assets/wode/111.png",
+        "uname1":"英国短毛猫",
+        "money1":"￥1600",
+        "time1":"18小时前"
+      },
+        {
+        "id":2,
+        "imgurl1":"../../assets/wode/111.png",
+        "uname1":"英国短毛猫",
+        "money1":"￥1600",
+        "time1":"18小时前"
+      }, 
+      {
+        "id":3,
+        "imgurl1":"../../assets/wode/111.png",
+        "uname1":"英国短毛猫",
+        "money1":"￥1600",
+        "time1":"18小时前"
+      }
+    ]
+}
