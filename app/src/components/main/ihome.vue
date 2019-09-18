@@ -7,7 +7,7 @@
         <img :src="require('../../assets/icon/zhuanfa.png')">
       </div>
     </div>
-    <mt-swipe :auto="1500">
+    <mt-swipe :auto="4000">
       <mt-swipe-item>
         <img :src="require('../../assets/csl/carousel1.png')">
       </mt-swipe-item>
@@ -22,43 +22,76 @@
       </mt-swipe-item>
     </mt-swipe>
     <div class="wiki">
-      <div><img :src="require('../../assets/icon/nearby.png')"><span>附近</span></div>
-      <div><img :src="require('../../assets/icon/dog.png')"><span>狗狗</span></div>
-      <div><img :src="require('../../assets/icon/cat.png')"><span>猫猫</span></div>
-      <div><img :src="require('../../assets/icon/mini.png')"><span>小宠</span></div>
-      <div><img :src="require('../../assets/icon/aquatic.png')"><span>水宠</span></div>
+      <div>
+        <img :src="require('../../assets/icon/nearby.png')">
+        <span>附近</span>
+      </div>
+      <div>
+        <img :src="require('../../assets/icon/dog.png')">
+        <span>狗狗</span>
+      </div>
+      <div>
+        <img :src="require('../../assets/icon/cat.png')">
+        <span>猫猫</span>
+      </div>
+      <div>
+        <img :src="require('../../assets/icon/mini.png')">
+        <span>小宠</span>
+      </div>
+      <div>
+        <img :src="require('../../assets/icon/aquatic.png')">
+        <span>水宠</span>
+      </div>
     </div>
   </div>
 </template>
 <script>
 export default {
+  created() {
+    // 当前组建创建成功回调函数
+    // this.csl();
+  },
   data() {
     return {
-      search: ""
+      search: "",
+      // csl:[]
     };
+  },
+  methods: {
+    csl() {
+      // 功能:获取当前用户购物车列表
+      // 1.创建url请求服务器地址
+      var url = "csl1";
+      // 2.发送ajax请求(让服务器程序完成功能)
+      this.axios.get(url).then(res => {
+        console.log(res)
+      });
+    }
   }
 };
 </script>
 <style scoped>
 .ihome {
-  padding-top: 2.4rem;
+  padding-top: 0.9rem;
 }
 .mint-search {
   width: 80%;
 }
 .mint-search >>> .mint-searchbar-core {
   /*输入框样式修改*/
+  height: 0.6rem;
   background: #eaeaea;
-  border-radius: 1rem;
+  border-radius: 0.6rem;
   text-align: center;
   padding: 0;
-  font-size: 0.8rem;
+  font-size: 0.3rem;
 }
 .mint-search >>> .mint-searchbar {
   width: 100%;
 }
 .mint-search >>> .mint-searchbar,
 .mint-search >>> .mint-searchbar-cancel {
+  font-size: 0.3rem;
   background: white;
   padding: 0;
   margin: 0;
@@ -66,29 +99,29 @@ export default {
 }
 .mint-search >>> .mintui-search:before {
   /*查询图标*/
-  font-size: 1.6rem;
+  font-size: 0.4rem;
   content: "\E604";
   position: absolute;
-  top: 0.1rem;
+  top: 22%;
   left: 5%;
 }
 #top {
-  height: 2.2rem;
-  line-height: 2.2rem;
+  height: 0.9rem;
   position: fixed;
-  top: 0.2rem;
+  top: 0;
   width: 100%;
   z-index: 200;
 }
 #top div {
-  height: 2.2rem;
+  height: 0.9rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 0.2rem 0 0.2rem 0;
 }
 #top img {
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 .mint-swipe img {
   width: 100%;
@@ -99,25 +132,23 @@ export default {
 }
 .mint-swipe,
 .mint-swipe img {
-  height: 10rem;
+  height: 3rem;
 }
-.mint-swipe{
-  margin-top:0.2rem
-}
-.wiki{
+.wiki {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
-  margin-top:1.2rem;
+  margin-top: 5%;
 }
-.wiki img{
-  width:3rem;
-  margin-bottom:0.3rem; 
+.wiki img {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-bottom: 18%;
 }
-.wiki div{
+.wiki div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font:0.9rem 微软雅黑 楷体;
+  font: 0.2rem 微软雅黑 楷体;
 }
 </style>

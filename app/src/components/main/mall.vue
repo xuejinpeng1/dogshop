@@ -4,7 +4,7 @@
       <minitwo
         v-for="(item,index) in rows.data"
         :key="index"
-        :img1="require(`../../img/`+item.img)"
+        :img1="require(`../../assets/mall/`+item.img)"
         :leftTitle="item.title"
       ></minitwo>
     </div>
@@ -14,7 +14,7 @@
         class="three1"
         v-for="(item,index) in rows1.data"
         :key="index"
-        :img1="require(`../../img/`+item.img)"
+        :img1="require(`../../assets/mall/`+item.img)"
         :message1="item.title"
         :message2="item.subtitle"
       ></minithree>
@@ -25,7 +25,7 @@
         class="four1"
         v-for="(item,index) in rows2.data"
         :key="index"
-        :img1="require(`../../img/`+item.img)"
+        :img1="require(`../../assets/mall/`+item.img)"
         :message1="item.title"
       ></minifour>
     </div>
@@ -37,13 +37,13 @@
   </div>
 </template>
 <script>
-import MiniTwo from "./../mini/minizi/MiniTwo.vue";
-import MiniThree from "./../mini/minizi/MiniThree.vue";
-import MiniFour from "./../mini/minizi/MiniFour.vue";
-import MiniFive from "./../mini/minizi/MiniFive.vue";
-import json from "./../mini/json/MiniTwo.json";
-import json1 from "./../mini/json/MiniThree.json";
-import json2 from "./../mini/json/MiniFour.json";
+import MiniTwo from "./../mall/MiniTwo.vue";
+import MiniThree from "./../mall/MiniThree.vue";
+import MiniFour from "./../mall/MiniFour.vue";
+import MiniFive from "./../mall/MiniFive.vue";
+import json from "./../json/MiniTwo.json";
+import json1 from "./../json/MiniThree.json";
+import json2 from "./../json/MiniFour.json";
 export default {
   data() {
     return {

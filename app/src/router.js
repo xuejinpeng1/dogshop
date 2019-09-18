@@ -1,34 +1,45 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloContainer from "./components/HelloWorld.vue"
-//引入自定义组件
-//import Exam01 from "./components/exam/Exam01.vue"
+
+//引入自定义组件home(晨)
 import Home from "./components/Home.vue"
 
-// login
+//login(彦东)
 //1:引入自定义组件 login.vue
 import login from "./components/login/login.vue"
 //2:引入自定义组件 forget.vue
 import forget from "./components/login/forget.vue"
+//3:引入自定义组件 mine.vue
+// import mine from "./components/login/mine.vue"(放到main下的/message,接口删掉了)
+//4:引入自定义组件 phone.vue
+import phone from "./components/login/phone.vue"
 
 
+//mall(江江)
+import Meal from "./components/mall/Meal.vue"
+import MiniTwo from "./components/mall/MiniTwo.vue"
+import MiniFive from "./components/mall/MiniFive.vue"
 
-import Home3 from "./components/mini/Home.vue"
-import Home4 from "./components/mini/Home2.vue"
-import MiniTwo from "./components/mini/minizi/MiniTwo.vue"
-import MiniFive from "./components/mini/minizi/MiniFive.vue"
+//message(玉洁)
+import MessageList from "./components/message/MessageList.vue"
+import NewsList from "./components/message/NewsList.vue"
+import Information from "./components/message/Information.vue"
+import Duty from "./components/message/Duty.vue"
+import Merchant from "./components/message/Merchant.vue"
+import Official from "./components/message/Official.vue"
+// import Login from "./components/message/Login.vue"
+import Counselor from "./components/message/Counselor.vue"
+import Pom from "./components/message/Pom.vue"
+import Ensure from "./components/message/Ensure.vue"
+import Store from "./components/message/Store.vue"
 
-import Home2 from "./components/message/Home.vue"
-import MessageList from "./components/message/common/MessageList.vue"
-import NewsList from "./components/message/common/NewsList.vue"
-import Information from "./components/message/common/Information.vue"
-import Duty from "./components/message/common/Duty.vue"
-import Merchant from "./components/message/common/Merchant.vue"
-import Official from "./components/message/common/Official.vue"
-import Login from "./components/message/common/Login.vue"
-import Counselor from "./components/message/common/Counselor.vue"
-import Pom from "./components/message/common/Pom.vue"
-import Ensure from "./components/message/common/Ensure.vue"
+//shop(金鹏)
+import Top from "./components/shop/top.vue"
+import Di from "./components/shop/di.vue"
+import Huoye from "./components/shop/huoye.vue"
+import Youxuan from "./components/shop/youxuan.vue"
+import Shop from "./components/main/shop.vue"
 
 Vue.use(Router)
 export default new Router({
@@ -36,23 +47,31 @@ export default new Router({
     //http://127.0.01:3001/#/
     { path: '/', component: HelloContainer },
     { path: '/Home', component: Home },
+
+    { path: '/phone', component: phone },
     { path: '/forget', component: forget },
     { path: '/login', component: login },
-    {path:'/MiniFive',component:MiniFive},
-    {path:'/MiniTwo',component:MiniTwo},
-    {path:'/Home3',component:Home3},
-    {path:'/Home4',component:Home4},
 
-    {path:'/Ensure',component:Ensure},
-    {path:'/Pom',component:Pom},
-    {path:'/Counselor',component:Counselor},
-    {path:'/Login',component:Login},
-    {path:'/Official',component:Official},
-    {path:'/Merchant',component:Merchant},
-    {path:'/Duty',component:Duty},
-    {path:'/Information',component:Information},
-    {path:'/NewsList',component:NewsList},
-    {path:'/MessageList',component:MessageList},
-    {path: '/Home2', component:Home2},
+    { path: '/MiniFive', component: MiniFive },
+    { path: '/MiniTwo', component: MiniTwo },
+    { path: '/Meal', component: Meal },
+
+    { path: '/Store', component: Store },
+    { path: '/Ensure', component: Ensure },
+    { path: '/Pom', component: Pom },
+    { path: '/Counselor', component: Counselor },
+    // { path: '/Login', component: Login },//已经有人写了,重复了
+    { path: '/Official', component: Official },
+    { path: '/Merchant', component: Merchant },
+    { path: '/Duty', component: Duty },
+    { path: '/Information', component: Information },
+    { path: '/NewsList', component: NewsList },
+    { path: '/MessageList', component: MessageList },
+
+    { path: '/Shop', component: Shop },
+    { path: '/Youxuan', component: Youxuan },
+    { path: '/Huoye', component: Huoye },
+    { path: '/Di', component: Di },
+    { path: '/Top', component: Top }
   ]
 })

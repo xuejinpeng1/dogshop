@@ -1,0 +1,28 @@
+{
+    "data":[
+      {
+        "id":1,
+        "imgurl":"../../assets/wode/11.png",
+        "uname":"平台认证",
+        "title":"杭州幂幂猫屋",
+        "money":"已交押金",
+        "place":"浙江杭州拱墅区德胜新村",
+        "number":"31",
+        "number1":"45",
+        "number2":"35",
+        "xing":"⭐⭐⭐⭐⭐"
+      },
+      {
+        "id":2,
+        "imgurl":"../../assets/wode/11.png",
+        "uname":"平台认证",
+        "title":"杭州幂幂猫屋",
+        "money":"已交押金",
+        "place":"浙江杭州拱墅区德胜新村",
+        "number":"31",
+        "number1":"45",
+        "number2":"35",
+        "xing":"⭐⭐⭐⭐⭐"
+      }
+    ]
+}

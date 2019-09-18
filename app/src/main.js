@@ -12,9 +12,9 @@ Vue.use(MintUI)
 //import "./font/iconfont.css"
 
 //1.5引入轮播图
-import { Swipe, SwipeItem } from 'mint-ui';
-Vue.component(Swipe.name, Swipe);
-Vue.component(SwipeItem.name, SwipeItem);
+// import { Swipe, SwipeItem } from 'mint-ui';
+// Vue.component(Swipe.name, Swipe);
+// Vue.component(SwipeItem.name, SwipeItem);
 
 //2.1引入axios库
 import axios from "axios"
@@ -26,13 +26,13 @@ axios.defaults.baseURL = "http://127.0.0.1:8080/"
 //2.5注册
 Vue.prototype.axios = axios;
 
-/*
+
 // 引入rem
 import rem from "./rem.js";
 // 注册 rem
 Vue.use(rem)
 Vue.config.productionTip=false;
-*/
+
 
 //功能：使用vuex保存共享数据
 //引入第三方模块

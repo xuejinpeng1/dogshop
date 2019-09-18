@@ -5,15 +5,22 @@
     <!-- 快捷登录 -->
     <div class="head">
       <h3>账号登录</h3>
-      <img src="../../assets/myself/10.png" alt />
+      <img class="img1" @click="phone" src="../../assets/myself/10.png" alt />
     </div>
     <!--用户名输入框-->
-    <mt-field class="name" label="用户名" placeholder="请输入用户名" v-model="uname"></mt-field>
+    <mt-field class="name" label="用户名 :" placeholder="请输入用户名" v-model="uname"></mt-field>
     <!--用户密码输入框-->
-    <mt-field class="pwd" label="密码" placeholder="请输入密码" v-model="upwd"></mt-field>
-    <span>忘记密码?</span>
+    <mt-field class="pwd" label="密码 :" placeholder="请输入密码" v-model="upwd"></mt-field>
+    <span @click="forget">忘记密码?</span>
     <!-- 确定按钮 绑定事件 -->
     <mt-button class="btn" size="large" @click="login">确定</mt-button>
+    <!-- 其他方式登录 -->
+    <div class="q">
+      <p>———— 其他方式登录 ————</p>
+      <img class="q_img" src="../../assets/myself/wx.png" alt />
+      <img class="q_img" src="../../assets/myself/QQ.png" alt />
+      <img class="q_img" src="../../assets/myself/zfb.png" alt />
+    </div>
   </div>
 </template>
 <script>
@@ -25,6 +32,12 @@ export default {
     };
   },
   methods: {
+    phone() {
+      this.$router.push("/phone");
+    },
+    forget() {
+      this.$router.push("/forget");
+    },
     login() {
       // 功能一：完成用户登录操作
       // 1：获取用户名和密码
@@ -65,25 +78,32 @@ export default {
 </script>  
 
 <style scoped>
+* {
+  margin: 0;
+  padding: 0;
+}
 /* 账号登录***************** */
 .head {
   border-bottom: 0.5rem solid #f4f4f4;
 }
-img {
+.img1 {
   /* 左箭头样式 */
   width: 0.6rem;
   height: 0.6rem;
   display: inline-block;
   position: absolute;
-  top: 0.4rem;
+  top: 0.7rem;
 }
 .head h3 {
   /* 字体样式 */
   font-size: 0.4rem;
   text-align: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0.7rem;
 }
 /* 用户名输入框************************* */
-.name {
+.name,
+.pwd {
   border-bottom: 0.05rem solid #f4f4f4;
 }
 .name >>> .mint-cell-wrapper {
@@ -99,6 +119,8 @@ span {
   float: right;
   margin-bottom: 0.5rem;
   margin-right: 0.3rem;
+  position: relative;
+  top: 0.2rem;
 }
 /* 确定按钮 */
 .btn {
@@ -107,5 +129,22 @@ span {
   width: 95%;
   margin: 0 auto;
   font-size: 0.3rem;
+}
+/* 其他方式登录 **********************/
+.q {
+  position: absolute;
+  bottom: 0;
+  transform: translateX(18%);
+  margin-bottom:1rem;
+}
+p {
+  font-size: 0.3rem;
+  color: #aaa;
+  text-align: center;
+}
+.q_img {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin: 0 0.5rem;
 }
 </style>

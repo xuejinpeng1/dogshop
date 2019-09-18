@@ -118,4 +118,12 @@ export default {
 .mint-tabbar > .mint-tab-item.is-selected {
   color: #ecaf08;
 }
+.mint-tabbar>>>img{
+  width:0.6rem;
+  height:0.6rem;
+}
+.app-container {
+  padding-top:0 !important;
+}
+
 </style>
