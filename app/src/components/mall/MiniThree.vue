@@ -29,15 +29,15 @@ export default {
 
 .f11 {
   display: flex;
+  justify-content: space-around;
 }
 .f11 > div:first-child {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  flex: auto;
+  flex-direction: column-reverse;
 }
 .f11 > div:nth-child(2) {
-  flex: auto;
+  /* flex: auto; */
   /* align-items: center */
   line-height: 100%;
 

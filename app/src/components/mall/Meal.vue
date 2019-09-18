@@ -17,14 +17,14 @@
   </div>
 </template>
 <style scoped>
-  .title0{
-    text-align: center;
-    font-weight: 800;
-    font-size: 26px;
-    margin:0;
-  }
+.title0 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 26px;
+  margin: 0;
+}
 .title1 {
-  margin:1.5rem 0;
+  margin: 1.5rem 0;
 }
 .title2 {
   font-size: 20px;

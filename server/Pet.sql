@@ -50,6 +50,15 @@ INSERT INTO carousel1 VALUES
 (3,'carousel3.png'),
 (4,'carousel4.png');
 
+CREATE TABLE carousel2(
+  pid INT PRIMARY KEY AUTO_INCREMENT,
+  pimg VARCHAR(32)
+);
+INSERT INTO carousel2 VALUES
+(1,'carousel5.png'),
+(2,'carousel6.png'),
+(3,'carousel7.png');
+
 
 
 
