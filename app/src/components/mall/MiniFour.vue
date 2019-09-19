@@ -1,5 +1,5 @@
 <template>
-  <div class="f2">
+  <div class="f2" @click="jump">
     <div>
       <img :src="img1" />
       <span>{{message1}}</span>
@@ -11,6 +11,11 @@ export default {
   props: {
     message1: { default: "" },
     img1: { default: "" }
+  },
+  methods: {
+    jump: function() {
+      this.$router.push("/Mpin")
+    }
   }
 };
 </script>

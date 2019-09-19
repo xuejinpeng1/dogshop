@@ -1,7 +1,7 @@
 <template>
   <div style="font-size:0.3rem">
     <div class="title">
-      <p class="title0" style="float:left">&lt;</p>
+      <p class="title0" style="float:left" @click="jump">&lt;</p>
       <p class="title0" style="margin-left:2.8rem">商城</p>
       <br />
       <div class="title1">
@@ -154,7 +154,9 @@ export default {
     go() {
       nn1.style.display = nn1.style.display == "none" ? "block" : "none";
     },
-    
+    jump: function() {
+      this.$router.push("/Mall")
+    }
   }
 };
 </script>
