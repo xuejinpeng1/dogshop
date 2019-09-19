@@ -2,6 +2,17 @@
   <div class="f3">
     <div style="padding-bottom:0.1rem;margin-bottom:0.3rem">
       <img :src="img1" />
+<<<<<<< HEAD
+      <h4 style="height:0.35rem;">{{message1}}</h4>
+      <p style="color:#666;font-size:14px">{{message2}}</p>
+      <span style="color:red;float:left;padding-right:10px;">
+        <b>{{message3}}</b>
+      </span>
+      <span style="color:red;border:1px solid #f00;border-radius:5px;">{{message4}}</span>
+      <span style="float:right;color:#666">
+        <s>{{message5}}</s>
+      </span>
+=======
       <div>
         <h4 style="height:44px;">{{message1}}</h4>
         <p style="color:#666;font-size:14px">{{message2}}</p>
@@ -15,6 +26,7 @@
           <s style="margin-right:25%">{{message5}}</s>
         </span>
       </div>
+>>>>>>> de6e75dfeb207866c63dc0c600b7324692fe69ad
     </div>
   </div>
 </template>

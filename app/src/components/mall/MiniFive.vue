@@ -34,5 +34,6 @@ export default {
   clear: both;
   display: flex;
   flex-wrap: wrap;
+  background-color: #eee;
 }
 </style>
