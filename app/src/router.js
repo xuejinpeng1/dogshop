@@ -18,6 +18,7 @@ import phone from "./components/login/phone.vue"
 
 //mall(江江)
 import Meal from "./components/mall/Meal.vue"
+import Mpin from "./components/mall/Mpin.vue"
 import MiniTwo from "./components/mall/MiniTwo.vue"
 import MiniFive from "./components/mall/MiniFive.vue"
 
@@ -55,6 +56,7 @@ export default new Router({
     { path: '/MiniFive', component: MiniFive },
     { path: '/MiniTwo', component: MiniTwo },
     { path: '/Meal', component: Meal },
+    { path: '/Mpin', component: Mpin },
 
     { path: '/Store', component: Store },
     { path: '/Ensure', component: Ensure },

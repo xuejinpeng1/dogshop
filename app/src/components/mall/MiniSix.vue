@@ -2,7 +2,7 @@
   <div class="f3">
     <div>
       <img :src="img1" />
-      <h4 style="height:44px;">{{message1}}</h4>
+      <h4 style="height:0.35rem;">{{message1}}</h4>
       <p style="color:#666;font-size:14px">{{message2}}</p>
       <span style="color:red;float:left;padding-right:10px;">
         <b>{{message3}}</b>
