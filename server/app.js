@@ -1,5 +1,5 @@
 //app.js 服务器端项目
-//1.下载第三方模块.
+//1.下载第三方模块
 //2.将第三方模块引入到当前程序中
 const express = require("express");
 const session = require("express-session");
@@ -12,7 +12,7 @@ var pool = mysql.createPool({
   password: "",
   port: 3306,
   connectionLimit: 20,
-  database: "xz"
+  database: "pet"
 })
 //4:创建web服务器监听 8080 端口
 var server = express();
@@ -45,6 +45,23 @@ server.use(express.static("public"))
 //打开浏览器
 //http://127.0.0.1:8080/login?uname=tom&upwd=123
 //http://127.0.0.1:8080/login?uname=tom&upwd=122
+
+
+server.get("/csl1",(req,res)=>{
+  pool.query('select * from carousel1',(err,result)=>{
+    if(err)throw err;
+    res.send(result)
+    console.log(result)
+  })
+})
+
+server.get("/csl2",(req,res)=>{
+  pool.query('select * from carousel2',(err,result)=>{
+    if(err)throw err;
+    res.send(result)
+    console.log(result)
+  })
+})
 
 server.get("/login", (req, res) => {
   //6.1:接收网页传递数据 用户名和密码

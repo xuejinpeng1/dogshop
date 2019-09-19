@@ -2,7 +2,7 @@
   <div class="zhudaohang1">
     <div class="zhudaohang2">
       <img :src="img1" />
-      <h3>{{leftTitle}}</h3>
+      <h3 style="margin-top:0.1rem;">{{leftTitle}}</h3>
     </div>
   </div>
 </template>
