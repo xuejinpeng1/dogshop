@@ -153,7 +153,8 @@ export default {
     },
     go() {
       nn1.style.display = nn1.style.display == "none" ? "block" : "none";
-    }
+    },
+    
   }
 };
 </script>

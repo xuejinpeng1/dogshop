@@ -22,12 +22,9 @@
   font-weight: 800;
   font-size: 26px;
   margin: 0;
-<<<<<<< HEAD
-=======
 }
 .title1 {
   margin: 1.5rem 0;
->>>>>>> de6e75dfeb207866c63dc0c600b7324692fe69ad
 }
 .title2 {
   font-size: 20px;
