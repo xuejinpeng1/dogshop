@@ -1,13 +1,13 @@
 <template>
-<div class="itemStyle">
-<titleBar title="交易指导"></titleBar>
-<!-- 1.商品图片 -->
-<div class="qq">
-    <img @click="jumpInformation" src="../../assets/message/011.jpg">
-    <img @click="jumpDuty" src="../../assets/message/022.jpg">
-    <img @click="jumpMerchant" src="../../assets/message/033.jpg">
-</div>
-</div>
+  <div class="itemStyle">
+    <titleBar title="交易指导" :back="xx"></titleBar>
+    <!-- 1.商品图片 -->
+    <div class="qq">
+      <img @click="jumpInformation" src="../../assets/message/011.jpg">
+      <img @click="jumpDuty" src="../../assets/message/022.jpg">
+      <img @click="jumpMerchant" src="../../assets/message/033.jpg">
+    </div>
+  </div>
 </template>
 <script>
 import TitleBar from "./TitleBar.vue";
@@ -16,19 +16,23 @@ export default {
     titleBar: TitleBar
   },
   methods: {
-       jumpInformation(){
-           //功能:跳转页面
-           this.$router.push("Information");
-       },
-        jumpDuty(){
-           //功能:跳转页面
-           this.$router.push("Duty");
-       },
-        jumpMerchant(){
-           //功能:跳转页面
-           this.$router.push("Merchant");
-       }
-       }
+    jumpInformation() {
+      //功能:跳转页面
+      this.$router.push("Information");
+    },
+    jumpDuty() {
+      //功能:跳转页面
+      this.$router.push("Duty");
+    },
+    jumpMerchant() {
+      //功能:跳转页面
+      this.$router.push("Merchant");
+    },
+    xx() {
+      console.log(11)
+      this.$router.go({ path: "/message" });
+    }
+  }
 };
 </script>
 <style scoped>
@@ -38,7 +42,7 @@ export default {
   width: 6.6rem;
   margin-top: 0.2rem;
 }
-.qq{
+.qq {
   text-align: center;
 }
 </style>

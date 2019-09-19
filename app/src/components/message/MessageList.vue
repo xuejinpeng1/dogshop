@@ -1,8 +1,8 @@
 <template>
-  <div>
-<!-- <h1>多条消息组件 MessageList.vue</h1> 
+  <div class="head">
+    <!-- <h1>多条消息组件 MessageList.vue</h1> 
 <h1>将MessageList.vue临时改全局组件</h1>  
-<h1>给组件分配访问路径 MessageList</h1>-->
+    <h1>给组件分配访问路径 MessageList</h1>-->
     <div @click="jumpNews">
       <message
         class="itemStyle"
@@ -33,11 +33,10 @@ export default {
     message: Message
   },
   methods: {
-    jumpNews(e) {  
-        if(e.target.nodeName=="DIV"){
-        var index=$(e.target).index();
+    jumpNews(e) {
+      var index = $(e.target).index();
       //功能:跳转页面
-      switch(index) {
+      switch (index) {
         case 0: //功能:跳转页面
           this.$router.push("NewsList");
           break;
@@ -47,16 +46,18 @@ export default {
         case 2: //功能:跳转页面
           this.$router.push("official");
           break;
-         case 3://功能:跳转页面
+        case 3: //功能:跳转页面
           this.$router.push("Counselor");
-           break;
-      }
+          break;
       }
     }
   }
 };
 </script>
 <style scoped>
+.head {
+  padding: 0;
+}
 .itemStyle {
   padding: 0.4rem 0.2rem;
   margin-top: 0.1rem;

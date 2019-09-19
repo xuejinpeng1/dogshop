@@ -2,36 +2,60 @@
   <div>
     <titleBar title="店铺详情"></titleBar>
     <div class="title">
-        <div class="text">
-      <img src="../../assets/message/h1.jpg">
-    </div>
-    <div class="txt">
-      <div class="textFirst">
-        <span>杭州幂幂猫屋</span>
+      <div class="text">
+        <img src="../../assets/message/h1.jpg">
       </div>
-      <div class="textScoend">
-        <span>平台认证</span>
-        <span>实地考察</span>
-        <span>已缴押金</span>
-      </div>
-      <div class="textThird"></div>
-      <div class="textfourth">
-        <span>浙江省杭州拱墅区德胜新村89幢1单元101室(路边小院门口有标牌)</span>
+      <div class="txt">
+        <div class="textFirst">
+          <span>杭州幂幂猫屋</span>
+        </div>
+        <div class="textScoend">
+          <span>平台认证</span>
+          <span>实地考察</span>
+          <span>已缴押金</span>
+        </div>
+        <div class="textThird"></div>
+        <div class="textfourth">
+          <span>浙江省杭州拱墅区德胜新村89幢1单元101室(路边小院门口有标牌)</span>
+        </div>
       </div>
     </div>
-    </div>
-    <div class="item">
-      <span>宠物</span>
-      <span>评价</span>
-      <span>简介</span>
+    <div class="page-navbar">
+      <!-- navbar -->
+      <mt-navbar class="page-part" v-model="selected">
+        <mt-tab-item id="1">宠物</mt-tab-item>
+        <mt-tab-item id="2">评价</mt-tab-item>
+        <mt-tab-item id="3">简介</mt-tab-item>
+      </mt-navbar>
+      <!-- tabcontainer -->
+      <mt-tab-container v-model="selected">
+        <mt-tab-container-item id="1">
+          <mt-cell/>
+        </mt-tab-container-item>
+        <mt-tab-container-item id="2">
+          <mt-cell/>
+        </mt-tab-container-item>
+        <mt-tab-container-item id="3">
+          <mt-cell/>
+        </mt-tab-container-item>
+      </mt-tab-container>
     </div>
   </div>
 </template>
 <script>
 import TitleBar from "./TitleBar.vue";
 export default {
+  name: "page-navbar",
   components: {
     titleBar: TitleBar
+  },
+  data() {
+    return {
+      selected: "1"
+    };
+  },
+  methods: {
+
   }
 };
 </script>
@@ -40,7 +64,7 @@ export default {
 .text {
   display: inline-block;
 }
-.title{
+.title {
   display: flex;
 }
 .text img {
@@ -72,7 +96,7 @@ export default {
   background-color: burlywood;
 }
 /* 精灵图 */
-.textThird{
+.textThird {
   width: 24%;
   height: 20%;
   background: url(../../assets/message/h2.png) 53% -46%;
@@ -84,13 +108,21 @@ export default {
   margin-top: 0.1rem;
 }
 /* 中间 */
-.item{
-  display: flex; 
-  justify-content:space-around;
+.item {
+  display: flex;
+  justify-content: space-around;
   margin-top: 0.3rem;
 }
-.item span{
- font-size: 0.3rem;
- 
+.item span {
+  font-size: 0.3rem;
 }
+.page-navbar {
+  margin-top: 0.2rem;
+}
+/* 导航条 */
+
+.mint-navbar >>> .mint-tab-item-label {
+  font-size: 0.3rem;
+}
+
 </style>
