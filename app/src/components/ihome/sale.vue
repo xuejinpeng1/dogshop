@@ -1,16 +1,19 @@
 <template>
-  <div class="father">
-    <img :src="img1" />
-    <div>
+  <div class="grandfather">
+    <img :src="bright" class="bright">
+    <div class="father">
+      <img :src="img1">
       <div>
-        <span>{{message1}}</span>
-        <span>{{message2}}</span>
-      </div>
-      <div>
-        <span>{{message4}}</span>
-        <span>
-          <s>{{message3}}</s>
-        </span>
+        <div>
+          <span>{{message1}}</span>
+          <span>{{message2}}</span>
+        </div>
+        <div>
+          <span>{{message4}}</span>
+          <span>
+            <s>{{message3}}</s>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -23,20 +26,28 @@ export default {
     message3: { default: "" },
     message4: { default: "" },
     message5: { default: "" },
-    img1: { default: "" }
+    img1: { default: "" },
+    bright: { default: "" }
   }
 };
 </script>
 <style scoped>
-.father {
+.grandfather {
   box-sizing: border-box;
   width: calc(100% / 3);
-  border: 0.2rem solid red;
+  border: 0.2rem solid white;
   border-left-width: 0.1rem;
-  border-right-width: 0.1rem
+  border-right-width: 0.1rem;
 }
 .father img {
   width: 100%;
+}
+.father div:first-child span:first-child,
+.father div:nth-child(2) span:first-child {
+  margin-left: 10%;
+}
+.father div:first-child {
+  margin-bottom: 10%;
 }
 .father div:first-child span:first-child {
   font: bolder 0.3rem 微软雅黑;
@@ -54,5 +65,14 @@ export default {
 .father div:nth-child(2) span:nth-child(2) {
   float: right;
   /* margin-right: 0.2rem; */
+}
+.grandfather{
+  position: relative;
+}
+.bright{
+  width:100%;
+  position: absolute;
+  top:0;
+  left:0;
 }
 </style>

@@ -2,14 +2,14 @@
   <div class="ihome">
     <div id="top">
       <div style="background:white">
-        <img :src="require('../../assets/icon/kefu.png')" />
+        <img :src="require('../../assets/icon/kefu.png')">
         <mt-search v-model="search" cancel-text="取消" placeholder="搜索宠物、商家、品牌"></mt-search>
-        <img :src="require('../../assets/icon/zhuanfa.png')" />
+        <img :src="require('../../assets/icon/zhuanfa.png')">
       </div>
     </div>
     <mt-swipe :auto="4000">
       <mt-swipe-item v-for="(item,index) in arr" :key="index">
-        <img :src="require(`../../assets/csl/`+item.pimg)" />
+        <img :src="require(`../../assets/csl/`+item.pimg)">
       </mt-swipe-item>
       <!-- <mt-swipe-item>
         <img :src="require('../../assets/csl/carousel1.png')">
@@ -26,36 +26,42 @@
     </mt-swipe>
     <div class="wiki">
       <div>
-        <img :src="require('../../assets/icon/nearby.png')" />
+        <img :src="require('../../assets/icon/nearby.png')">
         <span>附近</span>
       </div>
       <div>
-        <img :src="require('../../assets/icon/dog.png')" />
+        <img :src="require('../../assets/icon/dog.png')">
         <span>狗狗</span>
       </div>
       <div>
-        <img :src="require('../../assets/icon/cat.png')" />
+        <img :src="require('../../assets/icon/cat.png')">
         <span>猫猫</span>
       </div>
       <div>
-        <img :src="require('../../assets/icon/mini.png')" />
+        <img :src="require('../../assets/icon/mini.png')">
         <span>小宠</span>
       </div>
       <div>
-        <img :src="require('../../assets/icon/aquatic.png')" />
+        <img :src="require('../../assets/icon/aquatic.png')">
         <span>水宠</span>
       </div>
     </div>
-    <div class="sale">
-      <sale
-        v-for="(item,index) in rows.data"
-        :key="index"
-        :img1="require(`../../assets/message/`+item.sp_img)"
-        :message1="item.ptype"
-        :message2="item.sp_price"
-        :message3="item.sp_price2"
-        :message4="item.sp_address"
-      ></sale>
+    <div>
+      <div>
+        <img :src="require('../../assets/icon/icon1.png')" alt>
+      </div>
+      <div class="sale">
+        <sale
+          v-for="(item,index) in rows.data"
+          :key="index"
+          :img1="require(`../../assets/message/`+item.sp_img)"
+          :message1="item.ptype"
+          :message2="item.sp_price"
+          :message3="item.sp_price2"
+          :message4="item.sp_address"
+          :bright="require('../../assets/icon/tejia.png')"
+        ></sale>
+      </div>
     </div>
   </div>
 </template>
@@ -129,6 +135,10 @@ export default {
         // console.log(res.data[0].pimg);
         // console.log(console.log(JSON.stringify(res.data)));
         // this.arr = JSON.stringify(res.data);
+
+
+
+        
         this.arr = res.data;
         console.log(this.arr);
       });
