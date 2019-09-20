@@ -35,9 +35,6 @@ export default {
   overflow: auto; /* 溢出数据显示滚动条 */
   margin-bottom: 0.2rem;
 }
-.top {
-  padding-top: 0.5rem !important;
-}
 .page-head {
   display: block;
   text-align: center;
