@@ -1,5 +1,5 @@
 <template>
-  <div class="f11">
+  <div class="f11" @click="jump">
     <div>
       <span>{{message1}}</span>
       <span class="p1">{{message2}}</span>
@@ -15,6 +15,11 @@ export default {
     message1: { default: "" },
     message2: { default: "" },
     img1: { default: "" }
+  },
+   methods: {
+    jump: function() {
+      this.$router.push("/Meal")
+    }
   }
 };
 </script>

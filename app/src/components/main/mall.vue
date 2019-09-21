@@ -37,6 +37,7 @@
         v-for="(item,index) in rows2.data"
         :key="index"
         :img1="require(`../../assets/mall/`+item.img)"
+        :message1="item.title"
       ></minifour>
     </div>
     <h4 style="float:left">主粮</h4>
