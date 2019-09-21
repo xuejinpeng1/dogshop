@@ -47,9 +47,7 @@
       </div>
     </div>
     <div>
-      <div>
-        <img :src="require('../../assets/icon/icon1.png')" alt>
-      </div>
+      <ititle :top="require('../../assets/icon/icon1.png')" tips="更多"></ititle>
       <div class="sale">
         <sale
           v-for="(item,index) in rows.data"
@@ -67,6 +65,7 @@
 </template>
 <script>
 import Sale from "../ihome/sale.vue";
+import iTitle from "../ihome/title.vue";
 export default {
   created() {
     // 当前组建创建成功回调函数
@@ -135,17 +134,14 @@ export default {
         // console.log(res.data[0].pimg);
         // console.log(console.log(JSON.stringify(res.data)));
         // this.arr = JSON.stringify(res.data);
-
-
-
-        
         this.arr = res.data;
         console.log(this.arr);
       });
     }
   },
   components: {
-    sale: Sale
+    sale: Sale,
+    ititle: iTitle
   }
 };
 </script>
