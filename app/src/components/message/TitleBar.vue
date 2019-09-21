@@ -30,7 +30,7 @@ p {
   justify-content: center;
   font-weight: bold;
   margin-bottom: 0.3rem;
-  padding: 0;
+  padding-top: 0.5rem ;
 }
 .title {
   width: 100%;
