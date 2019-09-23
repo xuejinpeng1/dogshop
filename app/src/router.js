@@ -14,6 +14,12 @@ import forget from "./components/login/forget.vue"
 // import mine from "./components/login/mine.vue"(放到main下的/message,接口删掉了)
 //4:引入自定义组件 phone.vue
 import phone from "./components/login/phone.vue"
+//5:引入自定义组件 wu.vue
+import wu from "./components/login/wu.vue"
+//6:引入自定义组件 my.vue
+import my from "./components/login/my.vue"
+//7:引入自定义组件 my.vue
+import myself from "./components/main/myself.vue"
 
 
 //mall(江江)
@@ -30,11 +36,14 @@ import Information from "./components/message/Information.vue"
 import Duty from "./components/message/Duty.vue"
 import Merchant from "./components/message/Merchant.vue"
 import Official from "./components/message/Official.vue"
-// import Login from "./components/message/Login.vue"
 import Counselor from "./components/message/Counselor.vue"
 import Pom from "./components/message/Pom.vue"
 import Ensure from "./components/message/Ensure.vue"
 import Store from "./components/message/Store.vue"
+import Dog from "./components/ihome/Dog.vue"
+import Teddy from "./components/message/Teddy.vue"
+import Td from "./components/message/Td.vue"
+
 
 //shop(金鹏)
 import Top from "./components/shop/top.vue"
@@ -52,25 +61,30 @@ export default new Router({
 
     { path: '/phone', component: phone },
     { path: '/forget', component: forget },
+    { path: '/myself', component: myself },
     { path: '/login', component: login },
+    { path: '/my', component: my },
+    { path: '/wu', component: wu },
 
     { path: '/MiniFive', component: MiniFive },
     { path: '/MiniTwo', component: MiniTwo },
     { path: '/Meal', component: Meal },
     { path: '/Mpin', component: Mpin },
     { path: '/Mall', component: Mall },
-
+    
     { path: '/Store', component: Store },
     { path: '/Ensure', component: Ensure },
     { path: '/Pom', component: Pom },
     { path: '/Counselor', component: Counselor },
-    // { path: '/Login', component: Login },//已经有人写了,重复了
     { path: '/Official', component: Official },
     { path: '/Merchant', component: Merchant },
     { path: '/Duty', component: Duty },
     { path: '/Information', component: Information },
     { path: '/NewsList', component: NewsList },
     { path: '/MessageList', component: MessageList },
+    { path: '/Dog', component: Dog },
+    { path: '/Teddy',component: Teddy},
+    { path: '/Td',component:Td},
 
     { path: '/Shop', component: Shop },
     { path: '/Youxuan', component: Youxuan },

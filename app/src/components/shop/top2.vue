@@ -1,9 +1,9 @@
 <template>
   <div class="dd2">
     <div @click="itemClick(id)" class="pic1">
-       <img :src="simage" class="img1"/>
+       <img :src="simg" class="img1"/>
        <p class="uname1">{{uname}}</p>
-       <p class="span1">{{title}}</p>
+       <p class="span1">{{sname}}</p>
     </div>
     </div>
 </template>
@@ -11,9 +11,9 @@
 export default {
   props:{
     id:{default:""},
-    simage:{default:""},
+    simg:{default:""},
     uname:{type:String,default:""},
-    title:{type:String,default:""},
+    sname:{type:String,default:""},
     itemClick:{type:Function}
   },
   data(){

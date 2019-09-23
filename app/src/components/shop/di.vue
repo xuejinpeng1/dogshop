@@ -1,22 +1,21 @@
 <template>
   <div id="app">
+    <div @click="xx">
     <mt-index-list>
       <mt-index-section index="定位城市">
         <mt-cell title="杭州"></mt-cell>
       </mt-index-section>
-      <div>
-      <mt-index-section index="热门城市">
-        <mt-cell title="全国"></mt-cell>
-        <mt-cell title="北京"></mt-cell>
-        <mt-cell title="天津"></mt-cell>
-        <mt-cell title="上海"></mt-cell>
-        <mt-cell title="广州"></mt-cell>
-        <mt-cell title="深圳"></mt-cell>
-        <mt-cell title="武汉"></mt-cell>
-        <mt-cell title="成都"></mt-cell>
-        <mt-cell title="重庆"></mt-cell>
-      </mt-index-section>
-      </div>
+        <mt-index-section index="热门城市">
+          <mt-cell title="全国"></mt-cell>
+          <mt-cell title="北京"></mt-cell>
+          <mt-cell title="天津"></mt-cell>
+          <mt-cell title="上海"></mt-cell>
+          <mt-cell title="广州"></mt-cell>
+          <mt-cell title="深圳"></mt-cell>
+          <mt-cell title="武汉"></mt-cell>
+          <mt-cell title="成都"></mt-cell>
+          <mt-cell title="重庆"></mt-cell>
+        </mt-index-section>
       <mt-index-section index="A">
         <mt-cell title="鞍山"></mt-cell>
         <mt-cell title="安阳"></mt-cell>
@@ -121,22 +120,44 @@
         <mt-cell title="张家口"></mt-cell>
         <mt-cell title="郑州"></mt-cell>
       </mt-index-section>
-      
     </mt-index-list>
+    </div>
   </div>
 </template>
 <script>
 export default {
-  methods: {}
+  created() {
+    this.e1();
+  },
+  data() {
+    return {
+      aa: false
+    };
+  },
+  methods: {
+    e1() {
+      this.aa = true;
+    },
+    xx(e) {
+      if(e.target.nodeName=="DIV"){
+        if(e.target.children.length==1){
+          console.log(e.target.children[0].innerHTML)
+        }else{
+          console.log(e.target.children[0].children[0].innerHTML)
+        }
+        this.$router.push('/shop');
+      }     
+    }
+  }
 };
 </script>
 <style scoped>
 /* 标签颜色 */
- .mint-indexlist>>>p{
-   background-color:#ddd;
-   font-size:0.5rem;
- }
- .mint-indexlist{
+.mint-indexlist >>> p {
+  background-color: #ddd;
+  font-size: 0.5rem;
+}
+.mint-indexlist {
   margin-top: -5%;
- }
+}
 </style>

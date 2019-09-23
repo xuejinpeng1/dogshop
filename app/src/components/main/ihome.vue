@@ -11,18 +11,6 @@
       <mt-swipe-item v-for="(item,index) in arr" :key="index">
         <img :src="require(`../../assets/csl/`+item.pimg)">
       </mt-swipe-item>
-      <!-- <mt-swipe-item>
-        <img :src="require('../../assets/csl/carousel1.png')">
-      </mt-swipe-item>
-      <mt-swipe-item>
-        <img :src="require('../../assets/csl/carousel2.png')">
-      </mt-swipe-item>
-      <mt-swipe-item>
-        <img :src="require('../../assets/csl/carousel3.png')">
-      </mt-swipe-item>
-      <mt-swipe-item>
-        <img :src="require('../../assets/csl/carousel4.png')">
-      </mt-swipe-item>-->
     </mt-swipe>
     <div class="wiki">
       <div>
@@ -47,16 +35,20 @@
       </div>
     </div>
     <div>
-      <ititle :top="require('../../assets/icon/icon1.png')" tips="更多"></ititle>
+      <ititle
+        :top="require('../../assets/icon/icon1.png')"
+        tips="更多"
+        :arrow="require('../../assets/icon/right1.png')"
+      ></ititle>
       <div class="sale">
         <sale
-          v-for="(item,index) in rows.data"
+          v-for="(item,index) in onsale"
           :key="index"
-          :img1="require(`../../assets/message/`+item.sp_img)"
           :message1="item.ptype"
           :message2="item.sp_price"
           :message3="item.sp_price2"
           :message4="item.sp_address"
+          :img1="`http://127.0.0.1:8080/pet/`+item.img"
           :bright="require('../../assets/icon/tejia.png')"
         ></sale>
       </div>
@@ -70,72 +62,44 @@ export default {
   created() {
     // 当前组建创建成功回调函数
     this.csl();
+    this.sale();
   },
   data() {
     return {
       search: "",
       // arr: [{"pid":1,"pimg":"carousel1.png"},{"pid":2,"pimg":"carousel2.png"},{"pid":3,"pimg":"carousel3.png"},{"pid":4,"pimg":"carousel4.png"}]
       arr: "",
-      rows: {
-        data: [
-          {
-            sp_img: "4.jpg",
-            ptype: "金狗",
-            sp_price: 2000,
-            sp_price2: 4000,
-            sp_address: "河南 新乡"
-          },
-          {
-            sp_img: "4.jpg",
-            ptype: "金狗",
-            sp_price: 2000,
-            sp_price2: 4000,
-            sp_address: "河南 新乡"
-          },
-          {
-            sp_img: "4.jpg",
-            ptype: "金狗",
-            sp_price: 2000,
-            sp_price2: 4000,
-            sp_address: "河南 新乡"
-          },
-          {
-            sp_img: "4.jpg",
-            ptype: "金狗",
-            sp_price: 2000,
-            sp_price2: 4000,
-            sp_address: "河南 新乡"
-          },
-          {
-            sp_img: "4.jpg",
-            ptype: "金狗",
-            sp_price: 2000,
-            sp_price2: 4000,
-            sp_address: "河南 新乡"
-          },
-          {
-            sp_img: "4.jpg",
-            ptype: "金狗",
-            sp_price: 2000,
-            sp_price2: 4000,
-            sp_address: "河南 新乡"
-          }
-        ]
-      }
+      onsale: ""
     };
   },
   methods: {
+    sale() {
+      // console.log(this.onsale);
+      var url = "sale";
+      this.axios.get(url).then(res => {
+        this.onsale = res.data;
+        for (var i = 0; i < this.onsale.length; i++) {
+          if (this.onsale[i].sp_video === "") {
+            var arr = this.onsale[i].sp_img;
+            arr = arr.slice(2, -2); //sp31.jpg","sp32.jpg","sp33.jpg","sp34.jpg","sp35.jpg
+            //console.log(arr.split('","')); ////["sp71.jpg", "sp72.jpg", "sp73.jpg"]
+            this.onsale[i].img = arr.split('","')[0]; //sp71.jpg
+            console.log(this.onsale[i].img)
+          } else {
+            this.onsale[i].img = this.onsale[i].sp_video;
+          }
+        }
+
+      });
+    },
     csl() {
       // 功能:获取当前用户购物车列表
       // 1.创建url请求服务器地址
       var url = "csl1";
       // 2.发送ajax请求(让服务器程序完成功能)
       this.axios.get(url).then(res => {
-        // console.log(res.data[0].pimg);
-        // console.log(console.log(JSON.stringify(res.data)));
         // this.arr = JSON.stringify(res.data);
         this.arr = res.data;
-        console.log(this.arr);
       });
     }
   },
@@ -220,7 +184,7 @@ export default {
   height: 0.8rem;
   margin-bottom: 18%;
 }
-.wiki div {
+.wiki > div {
   display: flex;
   flex-direction: column;
   align-items: center;

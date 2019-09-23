@@ -1,28 +1,28 @@
 <template>
-  <div @click="itemClick(id)">
+  <div @click="itemClick(sid)">
     <!--h3>Message.vue 消息组件</h3-->
     <div class="rootstyle">
     <div class="left">
-      <img :src="imgurl" class="imgstyle" />
+      <img :src="simg" class="imgstyle" />
       <p class="uname1">{{uname}}</p>
     </div>
     <div class="zhong">
       <div>
-        <span class="title1">{{title}}</span>
-        <span class="money1">{{money}}</span>
+        <span class="title1">{{sname}}</span>
+        <!-- <span class="money1">{{money}}</span> -->
       </div>
-      <div class="place1">{{place}}</div>
+      <div class="place1">{{address}}</div>
       <div>
-        <span>在售{{number}}只</span>
+        <span>在售{{onsale}}只</span>
         <span class="number1">
           担保交易
-          <span>{{number1}}</span>只
+          <span>{{guarantee}}</span>只
         </span>
       </div>
     </div>
     <div class="right">
-      <span>{{xing}}</span>
-      <span>{{number2}}</span>
+      <img :src="require(`../../assets/shop/${star}`)" alt="">
+      <span>{{appraise}}</span>
       <span>好评数</span>
     </div>
   </div>
@@ -46,16 +46,16 @@ import tp from "../json/three.json"
 export default {
   props: {
     //接收父元素数据
-    id: { default: "" },
-    imgurl: { default: "" },
+    sid: { default: "" },
+    simg: { default: "" },
     uname: { type: String, default: "" },
-    title: { type: String, default: "" },
-    money: { type: String, default: "" },
-    place: { type: String, default: "" },
-    number: { default: "" },
-    number1: { default: "" },
-    number2: { default: "" },
-    xing: { type: String, default: "" },
+    sname: { type: String, default: "" },
+    // money: { type: String, default: "" },
+    address: { type: String, default: "" },
+    onsale: { default: "" },
+    guarantee: { default: "" },
+    appraise: { default: "" },
+    star: {  default: "" },
     itemClick: { type: Function }
   },
   data() {
@@ -107,7 +107,7 @@ export default {
   width: 5rem;
 }
 .right {
-  width: 2.5rem;
+  width: 1.6rem;
   text-align: right;
 }
 .zhong > div,
@@ -118,12 +118,12 @@ export default {
 .title1 {
   font-weight: bold;
 }
-.money1 {
+/* .money1 {
   margin-left: 0.25rem;
   background-color: red;
   padding: 0.05rem;
   border-radius: 0.05rem;
-}
+} */
 .place1 {
   font-size: 0.05rem;
 }

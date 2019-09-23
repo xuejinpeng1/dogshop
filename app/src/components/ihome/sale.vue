@@ -2,7 +2,9 @@
   <div class="grandfather">
     <img :src="bright" class="bright">
     <div class="father">
-      <img :src="img1">
+      <!-- <img :src="img1"> -->
+      <!-- <div style="background:url({{img1}})"></div> -->
+      <p :style="{backgroundImage: 'url(' + img1 + ')'}"></p>
       <div>
         <div>
           <span>{{message1}}</span>
@@ -66,13 +68,23 @@ export default {
   float: right;
   /* margin-right: 0.2rem; */
 }
-.grandfather{
+.grandfather {
   position: relative;
 }
-.bright{
-  width:100%;
+.bright {
+  width: 100%;
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
+}
+
+.father p {
+  display: inline-block;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin: 0 !important;
+  background-size: 100% 100%; /* 背景图片同窗口完全自适应，但长宽可能会变形 */
+  background-size: cover; /* 背景图片同窗口完全自适应，并且不变形 */
+  background-position:  center center;
 }
 </style>

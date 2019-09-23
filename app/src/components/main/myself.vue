@@ -8,10 +8,10 @@
       <img class="img1" src="../../assets/myself/1.png" />
     </div>
     <!-- 头像 -->
-    <div class="head">
-      <img class="img2" src="../../assets/myself/2.png" />
+    <div class="head" @click="phone">
+      <img class="img2" :src="require(`../../assets/myself/2.png`)" />
       <div class="head_text">
-        <h4>点击头像登录</h4>
+        <h4 ref="oq">点击头像登录</h4>
         <span>宠物市场购宠、售宠专业有保障</span>
       </div>
     </div>
@@ -22,19 +22,19 @@
         <p class="p2">积分</p>
       </div>
       <div>
-        <p class="p1">0张</p>
+        <p class="p1" v-text="content"></p>
         <p class="p2">优惠券</p>
       </div>
     </div>
     <!-- 付款信息 -->
-    <div class="info">
-      <div v-for="(item,i) of temp" :key="i">
+    <div class="info" >
+      <div v-for="(item,i) of temp" @click="router(i)" :key="i">
         <img :src="require(`../../assets/myself/${i+3}.png`)" />
         <span>{{item}}</span>
       </div>
     </div>
     <!-- 导航信息 -->
-    <div class="nav">
+    <div class="nav" >
       <div v-for="(item,i) of nav" :key="i">
         <span>{{item}}</span>
         <img src="../../assets/myself/8.png" alt />
@@ -49,6 +49,43 @@
 </template>
 <script>
 export default {
+  // 页面加载中直接掉check()
+  mounted() {
+    this.check();
+  },
+  methods: {
+    router(i){
+       if (window.sessionStorage.uid) {
+         this.$router.push({path:"/wu",query:{tag:i}})
+       }else{
+         this.$router.push("/phone");
+       }
+    },
+    check(){
+      if (window.sessionStorage.uid) {
+        // ref更改h4内容
+        var h4=this.$refs.oq;
+        h4.innerHTML="王痒痒";
+        // 更改头像
+        var img2 = document.getElementsByClassName("img2")[0];
+        img2.setAttribute("src",require(`../../assets/myself/wyd.png`));
+        // 更改优惠券
+        var p1 = document.getElementsByClassName("p1")[0];
+        this.content="3张";
+      } else {
+        console.log(222);
+      }
+    },
+    phone(){
+      if (window.sessionStorage.uid) {
+        // 跳转更改头像页面
+        this.$router.push("my");
+      }else{
+        // 未登录跳转注册页面
+        this.$router.push("/phone");
+      }
+    }
+  },
   data() {
     return {
       temp: ["待付款", "待发货", "已发货", "待评价", "退款"],
@@ -59,7 +96,8 @@ export default {
         "购宠协议",
         "用户帮助",
         "客服热线"
-      ]
+      ],
+    content:"0张"
     };
   }
 };

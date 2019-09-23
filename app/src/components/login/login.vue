@@ -25,6 +25,9 @@
 </template>
 <script>
 export default {
+  created() {
+    this.check();
+  },
   data() {
     return {
       uname: "",
@@ -32,6 +35,13 @@ export default {
     };
   },
   methods: {
+    check() {
+      if (window.sessionStorage.uid) {
+        console.log(111)
+      } else {
+        console.log(222);
+      }
+    },
     phone() {
       this.$router.push("/phone");
     },
@@ -45,7 +55,7 @@ export default {
       var p = this.upwd;
       // console.log(u+":"+p);
       // 2: 创建正则表达式 3~12位置 字母数字
-      var re = /^1(3|4|5|7|8)\d{9}$/;
+      var re = /^1(2|3|4|5|7|8)\d{9}$/;
       var reg = /^[0-9]{3,12}$/i;
       // 3: 判断如何错误 用户名提示
       if (!re.test(u)) {
@@ -69,6 +79,7 @@ export default {
           this.$messagebox("消息", "手机号或密码有误");
         } else {
           // 8: 成功 跳转
+          window.sessionStorage.uid = res.data.id;
           this.$router.push("/Home");
         }
       });

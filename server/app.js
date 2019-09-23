@@ -47,19 +47,19 @@ server.use(express.static("public"))
 //http://127.0.0.1:8080/login?uname=tom&upwd=122
 
 
-server.get("/csl1",(req,res)=>{
-  pool.query('select * from carousel1',(err,result)=>{
-    if(err)throw err;
+server.get("/csl1", (req, res) => {
+  pool.query('select * from carousel1', (err, result) => {
+    if (err) throw err;
     res.send(result)
-    console.log(result)
+    // console.log(result)
   })
 })
 
-server.get("/csl2",(req,res)=>{
-  pool.query('select * from carousel2',(err,result)=>{
-    if(err)throw err;
+server.get("/csl2", (req, res) => {
+  pool.query('select * from carousel2', (err, result) => {
+    if (err) throw err;
     res.send(result)
-    console.log(result)
+    // console.log(result)
   })
 })
 
@@ -68,8 +68,8 @@ server.get("/login", (req, res) => {
   var u = req.query.uname;
   var p = req.query.upwd;
   //6.2:创建sql
-  var sql = "SELECT id FROM xz_login";
-  sql += " WHERE uname = ? AND upwd = md5(?)";
+  var sql = "SELECT id FROM pet_login";
+  sql += " WHERE uname = ? AND upwd = ?";
   //6.3:执行sql语句并且获取返回结果
   pool.query(sql, [u, p], (err, result) => {
     //6.4:判断登录是否成功
@@ -89,5 +89,33 @@ server.get("/login", (req, res) => {
       console.log(req.session)
       res.send({ code: 1, msg: "登录成功" });
     }
+  })
+})
+
+server.get("/sale", (req, res) => {
+  pool.query('select ptype,sp_price,sp_price2,sp_address,sp_img,sp_video from shop_pet where bright=?',["特价"], (err, result) => {
+    if (err) throw err;
+    res.send(result)
+    console.log(111)
+    console.log(result)
+  })
+})
+
+// shop 活跃商家
+server.get("/shop1",(req,res)=>{
+  pool.query('select * from shop_info',(err,result)=>{
+    if(err)throw err;
+    res.send(result)
+    console.log(result)
+  })
+})
+
+server.get("/dog",(req,res)=>{
+  pool.query('select * from dog',(err,result)=>{
+    if(err)throw err;
+    console.log(111)
+
+    res.send(result)
+    console.log(result)
   })
 })

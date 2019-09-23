@@ -5,13 +5,13 @@
     </div>
     <div class="mm">
       <top
-        v-for="(item,index) in datas.data"
+        v-for="(item,index) of data"
         :key="index"
-        :id="item.id"
-        :uname="item.uname"
-        :title="item.title"
-        :simage="require('../../assets/shop/11.png')"
+        :sid="item.sid"
+        :sname="item.sname"
+        :simg="`http://127.0.0.1:8080/touxiang/`+item.simg"
         :itemClick="clickitem"
+        :uname="item.qualifications"
       ></top>
     </div>
   </div>
@@ -19,17 +19,43 @@
 <script>
 import top2 from "./top2";
 //负责引入json文件
-import top2json from "../json/huoye.json";
+// import top2json from "../json/huoye.json";
 export default {
   data() {
     return {
-      datas: top2json
+      // datas:top2json
+      data: []
     };
   },
-  created() {},
+  created() {
+    this.shop1();
+  },
   methods: {
     clickitem(id) {
       console.log(id);
+    },
+    shop1() {
+      var url = "shop1";
+      this.axios.get(url).then(res => {
+        this.data = res.data;
+        for (var i = 0; i < this.data.length; i++) {
+          // console.log(res.data[i].qualifications);
+          if (res.data[i].qualifications[1] == 1) {
+            this.data[i].qualifications = "平台认证";
+            // return ;
+          } else if (res.data[i].qualifications[3] == 1) {
+            this.data[i].qualifications = "实地考察";
+            // return;
+          } else if (res.data[i].qualifications[5] == 1) {
+            this.data[i].qualifications = "已缴押金";
+            // return;
+          } else if (res.data[i].qualifications[7] == 1) {
+            this.data[i].qualifications = "实名认证";
+            // return;
+          }
+        }
+        // console.log(JSON.stringify(this.data));
+      });
     }
   },
   components: {

@@ -28,7 +28,7 @@
 export default {
   methods: {
     mine() {
-      this.$router.push("/mine");
+      this.$router.push("/myself");
     },
     login() {
       this.$router.push("/login");
