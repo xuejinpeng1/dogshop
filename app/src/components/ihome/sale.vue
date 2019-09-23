@@ -87,4 +87,12 @@ export default {
   background-size: cover; /* 背景图片同窗口完全自适应，并且不变形 */
   background-position:  center center;
 }
+.father div:empty{
+  margin-left: 0 !important;
+  display: none
+}
+.father span:empty{
+  margin-left: 0 !important;
+  display: none
+}
 </style>

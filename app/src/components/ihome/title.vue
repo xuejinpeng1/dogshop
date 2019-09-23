@@ -17,23 +17,26 @@ export default {
 <style scoped>
 img{
   height:0.5rem;
+  z-index: 1000;
+  position: absolute;
+
 }
 div {
   padding: 0.1rem;
   position: relative;
-  height:0.9rem
+  height:0.5rem;
+    margin-top:0.25rem;
 }
 span {
-  font: 500 0.3rem 华文楷体;
+  font: 650 0.3rem 华文楷体;
   position: absolute;
-  color: #999999;
   right: 0.4rem;
-  bottom: 0.15rem;
+  bottom: 0.05rem;
 }
 .arrow1 {
   height: 0.33rem;
   position: absolute;
   right: 0.15rem;
-  bottom: 0.18rem;
+  bottom: 0.08rem;
 }
 </style>

@@ -93,29 +93,40 @@ server.get("/login", (req, res) => {
 })
 
 server.get("/sale", (req, res) => {
-  pool.query('select ptype,sp_price,sp_price2,sp_address,sp_img,sp_video from shop_pet where bright=?',["特价"], (err, result) => {
+  pool.query('select ptype,sp_price,sp_price2,sp_address,sp_img,sp_video from shop_pet where bright=?', ["特价"], (err, result) => {
     if (err) throw err;
     res.send(result)
-    console.log(111)
+  })
+})
+server.get("/new", (req, res) => {
+  pool.query('select ptype,sp_price,sp_img,sp_video from shop_pet', (err, result) => {
+    if (err) throw err;
+    res.send(result)
+    // console.log(result)
+  })
+})
+server.get("/better", (req, res) => {
+  pool.query('select ptype,sp_price,sp_price2,sp_address,sp_img,sp_video from shop_pet where bright=?', ["精品"], (err, result) => {
+    if (err) throw err;
+    res.send(result)
     console.log(result)
   })
 })
 
 // shop 活跃商家
-server.get("/shop1",(req,res)=>{
-  pool.query('select * from shop_info',(err,result)=>{
-    if(err)throw err;
+server.get("/shop1", (req, res) => {
+  pool.query('select * from shop_info', (err, result) => {
+    if (err) throw err;
     res.send(result)
-    console.log(result)
+    // console.log(result)
   })
 })
 
-server.get("/dog",(req,res)=>{
-  pool.query('select * from dog',(err,result)=>{
-    if(err)throw err;
+server.get("/dog", (req, res) => {
+  pool.query('select * from dog', (err, result) => {
+    if (err) throw err;
     console.log(111)
-
     res.send(result)
-    console.log(result)
+    // console.log(result)
   })
 })

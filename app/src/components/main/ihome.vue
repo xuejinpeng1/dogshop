@@ -14,7 +14,7 @@
     </mt-swipe>
     <div class="wiki">
       <div>
-        <img :src="require('../../assets/icon/nearby.png')">   
+        <img :src="require('../../assets/icon/nearby.png')">
         <span>附近</span>
       </div>
       <div>
@@ -41,6 +41,7 @@
         :top="require('../../assets/icon/icon1.png')"
         tips="更多"
         :arrow="require('../../assets/icon/right1.png')"
+        class="gary"
       ></ititle>
       <div class="sale">
         <sale
@@ -55,6 +56,47 @@
         ></sale>
       </div>
     </div>
+    <div>
+      <ititle
+        :top="require('../../assets/icon/icon2.png')"
+        tips="更多"
+        :arrow="require('../../assets/icon/right1.png')"
+        class="gary"
+      ></ititle>
+      <div class="sale">
+        <sale
+          v-for="(item,index) in onnew"
+          :key="index"
+          :message1="item.ptype"
+          :message2="item.sp_price"
+          :img1="`http://127.0.0.1:8080/pet/`+item.img"
+        ></sale>
+      </div>
+    </div>
+    <div>
+      <div>
+        <ititle
+          :top="require('../../assets/icon/icon3.png')"
+          tips="平台审核,品质认证"
+          :arrow="require('../../assets/icon/right1.png')"
+          class="yellow"
+        ></ititle>
+        <div class="sale">
+          <sale
+            v-for="(item,index) in onbetter"
+            :key="index"
+            :message1="item.ptype"
+            :message2="item.sp_price"
+            :message3="item.sp_price2"
+            :message4="item.sp_address"
+            :img1="`http://127.0.0.1:8080/pet/`+item.img"
+            :bright="require('../../assets/icon/jingpin.png')"
+          ></sale>
+          <!-- <div style="height:">进入精品馆</div> -->
+           <!-- style="color:#FF6E17"  <img :src="require('../../assets/icon/right.png')"> -->
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -65,13 +107,17 @@ export default {
     // 当前组建创建成功回调函数
     this.csl();
     this.sale();
+    this.new();
+    this.better();
   },
   data() {
     return {
       search: "",
       // arr: [{"pid":1,"pimg":"carousel1.png"},{"pid":2,"pimg":"carousel2.png"},{"pid":3,"pimg":"carousel3.png"},{"pid":4,"pimg":"carousel4.png"}]
       arr: "",
-      onsale: ""
+      onsale: "",
+      onnew: "",
+      onbetter: ""
     };
   },
   methods: {
@@ -86,9 +132,40 @@ export default {
             arr = arr.slice(2, -2); //sp31.jpg","sp32.jpg","sp33.jpg","sp34.jpg","sp35.jpg
             //console.log(arr.split('","')); ////["sp71.jpg", "sp72.jpg", "sp73.jpg"]
             this.onsale[i].img = arr.split('","')[0]; //sp71.jpg
-            console.log(this.onsale[i].img);
+            // console.log(this.onsale[i].img);
           } else {
             this.onsale[i].img = this.onsale[i].sp_video;
+          }
+        }
+      });
+    },
+    new() {
+      var url = "new";
+      this.axios.get(url).then(res => {
+        this.onnew = res.data;
+        for (var i = 0; i < this.onnew.length; i++) {
+          if (this.onnew[i].sp_video === "") {
+            var arr = this.onnew[i].sp_img;
+            arr = arr.slice(2, -2);
+            this.onnew[i].img = arr.split('","')[0];
+          } else {
+            this.onnew[i].img = this.onnew[i].sp_video;
+          }
+        }
+      });
+    },
+    better() {
+      var url = "better";
+      this.axios.get(url).then(res => {
+        console.log(res.data);
+        this.onbetter = res.data;
+        for (var i = 0; i < this.onbetter.length; i++) {
+          if (this.onbetter[i].sp_video === "") {
+            var arr = this.onbetter[i].sp_img;
+            arr = arr.slice(2, -2);
+            this.onbetter[i].img = arr.split('","')[0];
+          } else {
+            this.onbetter[i].img = this.onbetter[i].sp_video;
           }
         }
       });
@@ -203,4 +280,14 @@ export default {
 /* .sale .father:not(:first-child){
   margin-left: 0 !important;
 } */
+.span>div:first-child {
+  color: #999999;
+}
+.yellow {
+  /*字色*/
+  color: #ff9f09 !important;
+}
+.gary{
+  color: #999999;
+}
 </style>
