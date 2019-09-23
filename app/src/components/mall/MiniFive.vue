@@ -9,7 +9,7 @@
         :message1="item.title1"
         :message2="item.title2"
         :message3="item.title3"
-        :message4="item.title4"
+        message4="会员价"
         :message5="item.title5"
       ></minisix>
     </div>

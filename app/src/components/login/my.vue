@@ -5,6 +5,7 @@
     <!-- 快捷登录 -->
     <div class="head">
       <h3>编辑个人资料</h3>
+<<<<<<< HEAD
       <img @click="myself" class="img1" src="../../assets/myself/10.png" alt />
     </div>
     <mt-field class="name" label="昵称 :" placeholder="王痒痒"></mt-field>
@@ -17,10 +18,19 @@
     <div class="btn">
       <mt-button class="btn1" type="danger" size="large">完成</mt-button>
     </div> 
+=======
+      <img class="img1" src="../../assets/myself/10.png" alt />
+    </div>
+    <mt-field class="name" label="昵称 :" placeholder="请输入用户名"></mt-field>
+    <span></span>
+    <mt-popup v-model="popupVisible" position="bottom">vgyvgh </mt-popup>
+  
+>>>>>>> 4a92514d55ca4f125dbf110f4e4c9b9925b12f9a
   </div>
 </template>
 <script>
 export default {
+<<<<<<< HEAD
   data() {
     return {
       sheetVisible: false,
@@ -34,6 +44,10 @@ export default {
     tan() {
       this.sheetVisible = true;
     }
+=======
+  data:{
+    popupVisible:true
+>>>>>>> 4a92514d55ca4f125dbf110f4e4c9b9925b12f9a
   }
 };
 </script>
@@ -56,6 +70,7 @@ export default {
   margin-bottom: 0.5rem;
   margin-top: 0.7rem;
 }
+<<<<<<< HEAD
 /* 更换头像文本样式 */
 .sp1 {
   font-size: 0.33rem;
@@ -86,4 +101,6 @@ export default {
 .btn1{
   margin-top:1rem;
 }
+=======
+>>>>>>> 4a92514d55ca4f125dbf110f4e4c9b9925b12f9a
 </style>
