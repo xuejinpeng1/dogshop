@@ -8,18 +8,14 @@ import Home from "./components/Home.vue"
 //login(彦东)
 //1:引入自定义组件 login.vue
 import login from "./components/login/login.vue"
-//2:引入自定义组件 forget.vue
 import forget from "./components/login/forget.vue"
-//3:引入自定义组件 mine.vue
 // import mine from "./components/login/mine.vue"(放到main下的/message,接口删掉了)
-//4:引入自定义组件 phone.vue
 import phone from "./components/login/phone.vue"
-//5:引入自定义组件 wu.vue
 import wu from "./components/login/wu.vue"
-//6:引入自定义组件 my.vue
 import my from "./components/login/my.vue"
-//7:引入自定义组件 my.vue
 import myself from "./components/main/myself.vue"
+import int from "./components/login/int.vue"
+
 
 
 //mall(江江)
@@ -60,6 +56,7 @@ export default new Router({
     { path: '/Home', component: Home },
 
     { path: '/phone', component: phone },
+    { path: '/int' , component:int},
     { path: '/forget', component: forget },
     { path: '/myself', component: myself },
     { path: '/login', component: login },
