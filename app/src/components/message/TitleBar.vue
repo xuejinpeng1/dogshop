@@ -1,7 +1,7 @@
 <template>
   <div class="page-head">
     <!--组件 顶部导航条-->
-    <div class="title">
+    <div class="title"  @click="back">
       <img src="../../assets/message/00.jpg">
       <p>{{Title}}</p>
     </div>
@@ -11,7 +11,12 @@
 export default {
   props: {
     Title: { default: "" }
-  }
+  },
+  methods:{
+    back(){
+        this.$router.go(-1);//返回上一层
+    },
+},
 };
 </script>
 <style scoped>

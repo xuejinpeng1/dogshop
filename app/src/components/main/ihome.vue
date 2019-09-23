@@ -14,11 +14,13 @@
     </mt-swipe>
     <div class="wiki">
       <div>
-        <img :src="require('../../assets/icon/nearby.png')">
+        <img :src="require('../../assets/icon/nearby.png')">   
         <span>附近</span>
       </div>
       <div>
-        <img :src="require('../../assets/icon/dog.png')">
+        <router-link :to="{path:  '/dog'}">
+          <img :src="require('../../assets/icon/dog.png')">
+        </router-link>
         <span>狗狗</span>
       </div>
       <div>
@@ -84,12 +86,11 @@ export default {
             arr = arr.slice(2, -2); //sp31.jpg","sp32.jpg","sp33.jpg","sp34.jpg","sp35.jpg
             //console.log(arr.split('","')); ////["sp71.jpg", "sp72.jpg", "sp73.jpg"]
             this.onsale[i].img = arr.split('","')[0]; //sp71.jpg
-            console.log(this.onsale[i].img)
+            console.log(this.onsale[i].img);
           } else {
             this.onsale[i].img = this.onsale[i].sp_video;
           }
         }
-
       });
     },
     csl() {

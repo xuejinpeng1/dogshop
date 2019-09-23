@@ -1,6 +1,6 @@
 <template>
   <div>
-    <titleBar title="狗狗"></titleBar>
+    <titleBar title="狗狗" ></titleBar>
     <div class="product-app">
     <div class="goods-item" v-for="(item,index) of arr" :key="index">
       <!-- 1.宠物图片 -->
