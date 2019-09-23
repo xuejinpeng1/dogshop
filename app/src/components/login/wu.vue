@@ -4,11 +4,7 @@
   <div>
     <!-- 快捷登录 -->
     <div class="head">
-<<<<<<< HEAD
       <h3 id="h3" v-text="content"></h3>
-=======
-      <h3>账号登录</h3>
->>>>>>> 4a92514d55ca4f125dbf110f4e4c9b9925b12f9a
       <img @click="myself" class="img1" src="../../assets/myself/10.png" alt />
     </div>
     <!-- 暂无数据图片 -->
@@ -19,19 +15,15 @@
 </template>
 <script>
 export default {
-<<<<<<< HEAD
   data() {
     return {
       content:["待付款","待发送","已发货","待评价","退款"]
     }
   },
-=======
->>>>>>> 4a92514d55ca4f125dbf110f4e4c9b9925b12f9a
     methods:{
         myself(){
            this.$router.push("/myself");
         }
-<<<<<<< HEAD
     },
     created() {
       var url=document.location.href;
@@ -53,9 +45,6 @@ export default {
         this.content=this.content[4];
       }
     },
-=======
-    }
->>>>>>> 4a92514d55ca4f125dbf110f4e4c9b9925b12f9a
 }
 </script>
 
