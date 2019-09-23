@@ -1,8 +1,8 @@
 <template>
   <div>
-    <img :src="top">
+    <img :src="top" />
     <span>{{tips}}</span>
-    <img :src="arrow" class="arrow1">
+    <img :src="arrow" class="arrow1" />
   </div>
 </template>
 <script>
@@ -15,28 +15,27 @@ export default {
 };
 </script>
 <style scoped>
-img{
-  height:0.5rem;
+img {
+  height: 0.45rem;
   z-index: 1000;
   position: absolute;
-
 }
 div {
   padding: 0.1rem;
   position: relative;
-  height:0.5rem;
-    margin-top:0.25rem;
+  height: 0.45rem;
+  margin-top: 0.3rem;
 }
 span {
-  font: 650 0.3rem 华文楷体;
+  font: 650 0.23rem 华文楷体;
   position: absolute;
   right: 0.4rem;
-  bottom: 0.05rem;
+  bottom: 0.16rem;
 }
 .arrow1 {
   height: 0.33rem;
   position: absolute;
   right: 0.15rem;
-  bottom: 0.08rem;
+  bottom: 0.16rem;
 }
 </style>

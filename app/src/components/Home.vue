@@ -113,7 +113,7 @@ export default {
 }
 .content {
   overflow: auto;
-  padding-bottom: 51px;
+  padding-bottom:1.1rem;
 }
 .mint-tabbar > .mint-tab-item.is-selected {
   color: #ecaf08;

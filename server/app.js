@@ -112,6 +112,13 @@ server.get("/better", (req, res) => {
     console.log(result)
   })
 })
+server.get("/best", (req, res) => {
+  pool.query('select ptype,sp_price,sp_price2,sp_address,sp_img,sp_video from shop_pet where bright=?', ["高端"], (err, result) => {
+    if (err) throw err;
+    res.send(result)
+    console.log(result)
+  })
+})
 
 // shop 活跃商家
 server.get("/shop1", (req, res) => {
