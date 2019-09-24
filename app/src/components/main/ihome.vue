@@ -70,6 +70,8 @@
           :message1="item.ptype"
           :message2="item.sp_price"
           :img1="`http://127.0.0.1:8080/pet/`+item.img"
+          :bright="require('../../assets/icon/none.png')"
+
         ></sale>
       </div>
     </div>
@@ -92,7 +94,6 @@
             :img1="`http://127.0.0.1:8080/pet/`+item.img"
             :bright="require('../../assets/icon/jingpin.png')"
           ></sale>
-          <!-- style="color:#FF6E17"   -->
         </div>
         <div style="margin-bottom:0.1rem">
           进入精品馆

@@ -1,14 +1,12 @@
 <template>
   <div class="grandfather">
-    <img :src="bright" class="bright" />
+    <img :src="bright" class="bright">
     <div class="father">
-      <!-- <img :src="img1"> -->
-      <!-- <div style="background:url({{img1}})"></div> -->
       <p :style="{backgroundImage: 'url(' + img1 + ')'}"></p>
       <div>
         <div>
           <span>{{message1}}</span>
-          <span  style="position:absolute;right:0">￥{{message2}}</span>
+          <span style="position:absolute;right:0">￥{{message2}}</span>
         </div>
         <div>
           <span>{{message4}}</span>
@@ -74,12 +72,12 @@ export default {
   position: relative;
 }
 .bright {
-  width: 9%;
+  height: 2.2rem;
+  width: 2.2rem;
   position: absolute;
   top: 0;
   left: 0;
 }
-
 .father p {
   display: inline-block;
   width: 2.2rem;

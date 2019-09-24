@@ -39,6 +39,7 @@ export default {
       var url = "shop1";
       this.axios.get(url).then(res => {
         this.data = res.data;
+        console.log(this.data)
         for (var i = 0; i < this.data.length; i++) {
           
           if (res.data[i].qualifications[1] == 1) {

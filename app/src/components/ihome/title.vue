@@ -17,7 +17,7 @@ export default {
 <style scoped>
 img {
   height: 0.45rem;
-  z-index: 1000;
+  z-index: 1;
   position: absolute;
 }
 div {

@@ -2,45 +2,63 @@
   <div @click="itemClick(sid)">
     <!--h3>Message.vue 消息组件</h3-->
     <div class="rootstyle">
-    <div class="left">
-      <img :src="simg" class="imgstyle" />
-      <p class="uname1">{{uname}}</p>
-    </div>
-    <div class="zhong">
-      <div>
-        <span class="title1">{{sname}}</span>
-        <!-- <span class="money1">{{money}}</span> -->
+      <div class="left">
+        <img :src="simg" class="imgstyle">
+        <p class="uname1">{{uname}}</p>
       </div>
-      <div class="place1">{{address}}</div>
-      <div>
-        <span>在售{{onsale}}只</span>
-        <span class="number1">
-          担保交易
-          <span>{{guarantee}}</span>只
-        </span>
+      <div class="zhong">
+        <div>
+          <span class="title1">{{sname}}</span>
+          <!-- <span class="money1">{{money}}</span> -->
+        </div>
+        <div class="place1">{{address}}</div>
+        <div>
+          <span>在售{{onsale}}只</span>
+          <span class="number1">
+            担保交易
+            <span>{{guarantee}}</span>只
+          </span>
+        </div>
+      </div>
+      <div class="right">
+        <img :src="require(`../../assets/shop/${star}`)" alt>
+        <span>{{appraise}}</span>
+        <span>好评数</span>
       </div>
     </div>
-    <div class="right">
-      <img :src="require(`../../assets/shop/${star}`)" alt="">
-      <span>{{appraise}}</span>
-      <span>好评数</span>
-    </div>
-  </div>
-   <div class="xh1">
+    <div class="xh1">
       <three
-        v-for="(item,index) in datas"
-        :key="index"
-        :sp_img="`http://127.0.0.1:8080/pet/`+item.sp_img"
+        v-for="item in datas1"
+        :key="item.spid"
+        :sp_img="`http://127.0.0.1:8080/pet/`+item.img"
         :spid="item.spid"
         :ptype="item.ptype"
         :sp_price="item.sp_price"
         :sp_time="item.sp_time"
       ></three>
-      </div> 
+      <three
+        v-for="item in datas2"
+        :key="item.spid"
+        :sp_img="`http://127.0.0.1:8080/pet/`+item.img"
+        :spid="item.spid"
+        :ptype="item.ptype"
+        :sp_price="item.sp_price"
+        :sp_time="item.sp_time"
+      ></three>
+      <three
+        v-for="item in datas3"
+        :key="item.spid"
+        :sp_img="`http://127.0.0.1:8080/pet/`+item.img"
+        :spid="item.spid"
+        :ptype="item.ptype"
+        :sp_price="item.sp_price"
+        :sp_time="item.sp_time"
+      ></three>
+    </div>
   </div>
 </template>
 <script>
-import three from "./three"
+import three from "./three";
 // import tp from "../json/three.json"
 export default {
   props: {
@@ -54,35 +72,72 @@ export default {
     onsale: { default: "" },
     guarantee: { default: "" },
     appraise: { default: "" },
-    star: {  default: "" },
-    itemClick: { type: Function },
+    star: { default: "" },
+    itemClick: { type: Function }
   },
   data() {
     return {
-      datas:""
+      datas1: "",
+      datas2: "",
+      datas3: ""
     };
   },
   created() {
     this.shop2();
   },
-   methods: {
-      clickitem(id){
-        console.log(id);
-     },
-     //接口
-     shop2() {
+  mounted() {},
+  methods: {
+    clickitem(id) {
+      console.log(id);
+    },
+    //接口
+    shop2() {
       var url = "shop2";
-      var xx=[]
-      // console.log(this.sid)
-      this.axios.get(url,{params:{sname:this.sid}}).then(res => {
-        //  console.log(res.data)
+      this.axios.get(url, { params: { sname: this.sid } }).then(res => {
+        // for (var i = 0; i < 2; i++) {
+        this.axios.get("shop3", { params: { spid: res.data[0] } }).then(res => {
+          for (var i = 0; i < res.data.length; i++) {
+            if (res.data[i].sp_video === "") {
+              var arr = res.data[i].sp_img;
+              arr = arr.slice(2, -2);
+              res.data[i].img = arr.split('","')[0];
+            } else {
+              res.data[i].img = res.data[i].sp_video;
+            }
+            this.datas1 = res.data;
+          }
+        });
+        this.axios.get("shop3", { params: { spid: res.data[1] } }).then(res => {
+          for (var i = 0; i < res.data.length; i++) {
+            if (res.data[i].sp_video === "") {
+              var arr = res.data[i].sp_img;
+              arr = arr.slice(2, -2);
+              res.data[i].img = arr.split('","')[0];
+            } else {
+              res.data[i].img = res.data[i].sp_video;
+            }
+            this.datas2 = res.data;
+          }
+        });
+        this.axios.get("shop3", { params: { spid: res.data[2] } }).then(res => {
+          for (var i = 0; i < res.data.length; i++) {
+            if (res.data[i].sp_video === "") {
+              var arr = res.data[i].sp_img;
+              arr = arr.slice(2, -2);
+              res.data[i].img = arr.split('","')[0];
+            } else {
+              res.data[i].img = res.data[i].sp_video;
+            }
+            this.datas3 = res.data;
+          }
+        });
+        // }
       });
     }
-   },
-    components:{
-        "three":three
-    }
-   
+  },
+  components: {
+    three: three
+  }
 };
 </script>
 <style scoped>
@@ -106,8 +161,8 @@ export default {
   top: 0.9rem;
   left: 0.2rem;
   background: red;
-  padding: 0.1rem;
-  border-radius: 0.1rem;
+  padding:0.02rem 0.06rem 0.02rem 0.06rem;
+  border-radius: 0.2rem;
 }
 .zhong,
 .right {
@@ -116,6 +171,7 @@ export default {
 }
 .zhong {
   width: 5rem;
+  margin-bottom:0.25rem;
 }
 .right {
   width: 1.6rem;
@@ -129,13 +185,8 @@ export default {
 .title1 {
   font-weight: bold;
 }
-/* .money1 {
-  margin-left: 0.25rem;
-  background-color: red;
-  padding: 0.05rem;
-  border-radius: 0.05rem;
-} */
 .place1 {
+  padding:0 !important;
   font-size: 0.05rem;
 }
 .number1 {
@@ -144,8 +195,13 @@ export default {
 .number1 > span {
   color: red;
 }
-.xh1{
+.xh1 {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 0.2rem;
+}
+.itemstyle {
+  height: 4.3rem;
+  border-bottom: 0.2rem solid rgba(206, 204, 204,0.7);
 }
 </style>

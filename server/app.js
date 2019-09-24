@@ -127,7 +127,16 @@ server.get("/shop1", (req, res) => {
 //shop 商家宠物
 server.get("/shop2", (req, res) => {
   var sid = req.query.sname;
-  pool.query('select spid from shop_pet where sid=?',sid, (err, result) => {
+  pool.query('select spid from shop_pet where sid=?', sid, (err, result) => {
+    if (err) throw err;
+    res.send([result[0].spid, result[1].spid, result[2].spid]);
+    //select sp_img from shop_pet where sid=1
+  })
+})
+//shop 宠物详情
+server.get("/shop3", (req, res) => {
+  var spid = req.query.spid;
+  pool.query('select ptype,sp_price,sp_video,sp_img,sp_time from shop_pet where spid=?', spid, (err, result) => {
     if (err) throw err;
     console.log(result)
     res.send(result);

@@ -1,14 +1,14 @@
 <template>
+  <div @click="itemClick(spid)" class="one">
     <div>
-      <div @click="itemClick(spid)" class="one">
-        <img :src="sp_img">
-        <span class="uname1">{{ptype}}</span>
-        <div>
-          <span class="money1">{{sp_price}}</span>
-          <span class="time1">{{sp_time}}</span>
-        </div>
-      </div>
+      <div :style="{backgroundImage: 'url(' + sp_img + ')'}"></div>
     </div>
+    <div>
+      <p class="uname1">{{ptype}}</p>
+      <span class="money1">{{sp_price}}</span>
+      <span class="time1">{{sp_time}}</span>
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -27,14 +27,36 @@ export default {
 };
 </script>
 <style scoped>
-  .one{
-      margin-top:0.3rem;
-      width:2.3rem;
-      height:3rem;
-      font-size:0.2rem;
-  }
-  img{width:2.3rem;}
-  .uname1{font-weight:800;}
-  .money1{color:red}
-  .time1{margin-left:0.2rem;}
+.one {
+  margin-top: 0.3rem;
+  width: 2.3rem;
+  height: 3rem;
+  font-size: 0.2rem;
+}
+img {
+  width: 2.3rem;
+}
+.uname1 {
+  font-weight: 800;
+}
+.money1 {
+  color: red;
+  float:left
+}
+.time1 {
+  float:right
+}
+.one div:first-child {
+  display: inline-block;
+  width: 2.2rem;
+  height: 2.2rem;
+  margin: 0 !important;
+  background-size: 100% 100%; /* 背景图片同窗口完全自适应，但长宽可能会变形 */
+  background-size: cover; /* 背景图片同窗口完全自适应，并且不变形 */
+  background-position: center center;
+}
+.one div:nth-child(2){
+  height:0.8rem;
+  width:100%;
+}
 </style>
