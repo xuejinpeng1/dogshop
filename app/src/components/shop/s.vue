@@ -36,8 +36,7 @@
         :sp_price="item.sp_price"
         :sp_time="item.sp_time"
       ></three>
-      </div>
-    
+      </div> 
   </div>
 </template>
 <script>
@@ -56,7 +55,7 @@ export default {
     guarantee: { default: "" },
     appraise: { default: "" },
     star: {  default: "" },
-    itemClick: { type: Function }
+    itemClick: { type: Function },
   },
   data() {
     return {
@@ -73,8 +72,10 @@ export default {
      //接口
      shop2() {
       var url = "shop2";
-      this.axios.get(url).then(res => {
-         this.datas = res.data;
+      var xx=[]
+      // console.log(this.sid)
+      this.axios.get(url,{params:{sname:this.sid}}).then(res => {
+        //  console.log(res.data)
       });
     }
    },

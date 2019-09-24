@@ -77,7 +77,7 @@ export default {
       // 2.发送ajax请求(让服务器程序完成功能)
       this.axios.get(url).then(res => {
         this.arr = res.data;
-        console.log(this.arr);
+        // console.log(this.arr);
       });
     },
     jump: function() {

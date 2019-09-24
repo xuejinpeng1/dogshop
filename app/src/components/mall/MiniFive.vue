@@ -39,7 +39,7 @@ export default {
       // 2.发送ajax请求(让服务器程序完成功能)
       this.axios.get(url).then(res => {
         this.rows = res.data;
-        console.log(this.rows);
+        // console.log(this.rows);
       });
     }
   }

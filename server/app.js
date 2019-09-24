@@ -102,26 +102,18 @@ server.get("/new", (req, res) => {
   pool.query('select ptype,sp_price,sp_img,sp_video from shop_pet', (err, result) => {
     if (err) throw err;
     res.send(result)
-    // console.log(result)
   })
 })
 server.get("/better", (req, res) => {
   pool.query('select ptype,sp_price,sp_price2,sp_address,sp_img,sp_video from shop_pet where bright=?', ["精品"], (err, result) => {
     if (err) throw err;
     res.send(result)
-    console.log(result)
   })
 })
 server.get("/best", (req, res) => {
   pool.query('select ptype,sp_price,sp_price2,sp_address,sp_img,sp_video from shop_pet where bright=?', ["高端"], (err, result) => {
     if (err) throw err;
     res.send(result)
-<<<<<<< Updated upstream
-    console.log(result)
-=======
-    // console.log(111)
-    // console.log(result)
->>>>>>> Stashed changes
   })
 })
 
@@ -130,62 +122,44 @@ server.get("/shop1", (req, res) => {
   pool.query('select * from shop_info', (err, result) => {
     if (err) throw err;
     res.send(result)
-    // console.log(result)
   })
 })
 //shop 商家宠物
-server.get("/shop2",(req,res)=>{
-  pool.query('select * from shop_pet',(err,result)=>{
-    if(err)throw err;
-    res.send(result);
+server.get("/shop2", (req, res) => {
+  var sid = req.query.sname;
+  pool.query('select spid from shop_pet where sid=?',sid, (err, result) => {
+    if (err) throw err;
     console.log(result)
+    res.send(result);
     //select sp_img from shop_pet where sid=1
   })
 })
 
-<<<<<<< Updated upstream
+
 server.get("/dog", (req, res) => {
   pool.query('select * from dog', (err, result) => {
     if (err) throw err;
-    console.log(111)
-=======
-server.get("/dog",(req,res)=>{
-  pool.query('select * from dog',(err,result)=>{
-    if(err)throw err;
-<<<<<<< Updated upstream
-    // console.log(111)
-
->>>>>>> Stashed changes
-=======
-    console.log(111)
->>>>>>> Stashed changes
     res.send(result)
-    // console.log(result)
   })
 })
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-server.get("/wyd",(req,res)=>{
-  var $id=req.query.id
+server.get("/wyd", (req, res) => {
+  var $id = req.query.id
   console.log($id)
-  pool.query('select * from pet_login where id=?',[$id],(err,result)=>{
-    if(err)throw err;
-    // console.log(result)
+  pool.query('select * from pet_login where id=?', [$id], (err, result) => {
+    if (err) throw err;
     res.send(result)
-=======
-server.get("/Ennly",(req,res)=>{
-  pool.query('select * from pet_details',(err,result)=>{
-    if(err)throw err;
+  })
+})
+server.get("/Ennly", (req, res) => {
+  pool.query('select * from pet_details', (err, result) => {
+    if (err) throw err;
     res.send(result)
-    console.log(result)
->>>>>>> Stashed changes
-=======
-server.get("/comt",(req,res)=>{
-  pool.query('select * from commodity',(err,result)=>{
-    if(err)throw err;
+  })
+})
+server.get("/comt", (req, res) => {
+  pool.query('select * from commodity', (err, result) => {
+    if (err) throw err;
     res.send(result)
-    console.log(result)
->>>>>>> Stashed changes
   })
 })
