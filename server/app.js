@@ -143,14 +143,19 @@ server.get("/dog", (req, res) => {
 server.get("/dog",(req,res)=>{
   pool.query('select * from dog',(err,result)=>{
     if(err)throw err;
+<<<<<<< Updated upstream
     // console.log(111)
 
+>>>>>>> Stashed changes
+=======
+    console.log(111)
 >>>>>>> Stashed changes
     res.send(result)
     // console.log(result)
   })
 })
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 server.get("/wyd",(req,res)=>{
   var $id=req.query.id
@@ -162,6 +167,13 @@ server.get("/wyd",(req,res)=>{
 =======
 server.get("/Ennly",(req,res)=>{
   pool.query('select * from pet_details',(err,result)=>{
+    if(err)throw err;
+    res.send(result)
+    console.log(result)
+>>>>>>> Stashed changes
+=======
+server.get("/comt",(req,res)=>{
+  pool.query('select * from commodity',(err,result)=>{
     if(err)throw err;
     res.send(result)
     console.log(result)

@@ -4,7 +4,7 @@
       <img :src="img1" />
       <div>
         <h4 style="height:44px;">{{message1}}</h4>
-        <p style="color:#666;font-size:14px">{{message2}}</p>
+        <div style="color:#666;font-size:14px;height:32px">{{message2}}</div>
         <span style="color:red;float:left;padding-right:10px;">
           <b>{{message3}}</b>
         </span>

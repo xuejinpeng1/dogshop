@@ -1,7 +1,7 @@
 <template>
   <div style="font-size:0.3rem">
     <div class="top">
-      <div class="page-tabbar">
+      <div class="page-tabbar" style="padding:0">
         <titleBar title="商城"></titleBar>
       </div>
     </div>
@@ -39,9 +39,9 @@
         :img1="require(`../../assets/mall/`+item.img)"
         :message1="item.title"
       ></minifour>
-    </div>
-    <h4 style="float:left">主粮</h4>
-    <span style="float:right">更多</span>
+    </div><hr>
+    <h4 style="float:left" @click="jump">主粮</h4>
+    <span style="float:right" @click="jump">更多</span>
     <div>
       <minifive></minifive>
     </div>
@@ -79,6 +79,9 @@ export default {
         this.arr = res.data;
         console.log(this.arr);
       });
+    },
+    jump: function() {
+      this.$router.push("/Mpin")
     }
   },
   components: {
@@ -146,9 +149,6 @@ h4{
   overflow: hidden; /*元素溢出隐藏*/
   overflow: auto; /* 溢出数据显示滚动条 */
   margin-bottom: 0.2rem;
-}
-.top {
-  padding-top: 0.5rem !important;
 }
 .page-head {
   display: block;
