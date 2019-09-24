@@ -6,11 +6,14 @@ USE pet;
 /**用户登录**/
 CREATE TABLE pet_login(
   id INT PRIMARY KEY AUTO_INCREMENT,
-  uname VARCHAR(11),
-  upwd CHAR(15)
+  uname VARCHAR(16),
+  upwd CHAR(16),
+  uimg VARCHAR(16),
+  iname VARCHAR(8),
+  iquan TINYINT
 );
 INSERT INTO pet_login VALUES
-  (1,'12312345678','123456');
+  (1,'12312345678','123456','wyd.png','王痒痒',3);
 
   
 /**狗狗种类**/

@@ -79,7 +79,9 @@ export default {
           this.$messagebox("消息", "手机号或密码有误");
         } else {
           // 8: 成功 跳转
-          window.sessionStorage.uid = res.data.id;
+          console.log(res.data)
+          window.sessionStorage.uid = res.data[0].id;
+          console.log(window.sessionStorage.uid)
           this.$router.push("/Home");
         }
       });

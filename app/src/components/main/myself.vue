@@ -17,7 +17,7 @@
     </div>
     <!-- 积分 -->
     <div class="int">
-      <div>
+      <div @click="int">
         <p class="p1">0分</p>
         <p class="p2">积分</p>
       </div>
@@ -27,14 +27,14 @@
       </div>
     </div>
     <!-- 付款信息 -->
-    <div class="info" >
+    <div class="info">
       <div v-for="(item,i) of temp" @click="router(i)" :key="i">
         <img :src="require(`../../assets/myself/${i+3}.png`)" />
         <span>{{item}}</span>
       </div>
     </div>
     <!-- 导航信息 -->
-    <div class="nav" >
+    <div class="nav">
       <div v-for="(item,i) of nav" :key="i">
         <span>{{item}}</span>
         <img src="../../assets/myself/8.png" alt />
@@ -49,38 +49,69 @@
 </template>
 <script>
 export default {
-  // 页面加载中直接掉check()
-  mounted() {
+  created() {
     this.check();
   },
+  data() {
+    return {
+      name: ""
+    };
+  },
+  // 页面加载中直接掉check()
+  mounted() {
+    // this.check();
+  },
   methods: {
-    router(i){
-       if (window.sessionStorage.uid) {
-         this.$router.push({path:"/wu",query:{tag:i}})
-       }else{
-         this.$router.push("/phone");
-       }
-    },
-    check(){
-      if (window.sessionStorage.uid) {
+    wyd() {
+      // 创建url请求服务器地址
+      var url = "wyd";
+      var id=window.sessionStorage.uid//1
+      console.log(id)
+      this.axios.get(url,{params:{id:id}}).then(res => {
+        console.log(res.data)
+        this.name = res.data[0];
+        console.log(this.name);
         // ref更改h4内容
-        var h4=this.$refs.oq;
-        h4.innerHTML="王痒痒";
-        // 更改头像
-        var img2 = document.getElementsByClassName("img2")[0];
-        img2.setAttribute("src",require(`../../assets/myself/wyd.png`));
-        // 更改优惠券
-        var p1 = document.getElementsByClassName("p1")[0];
-        this.content="3张";
+          var h4=this.$refs.oq;
+          h4.innerHTML=this.name.iname;
+          // 更改头像
+          var img2 = document.getElementsByClassName("img2")[0];
+          img2.setAttribute("src",require(`../../assets/myself/${this.name.uimg}`));
+          // 更改优惠券
+          var p1 = document.getElementsByClassName("p1")[0];
+          this.content=`${this.name.iquan}张`;
+        
+
+
+      });
+    },
+    int() {
+      if (window.sessionStorage.uid) {
+        // 跳转int积分页面
+        this.$router.push("int");
       } else {
-        console.log(222);
+        // 未登录跳转注册页面
+        this.$router.push("/phone");
       }
     },
-    phone(){
+    router(i) {
+      if (window.sessionStorage.uid) {
+        this.$router.push({ path: "/wu", query: { tag: i } });
+      } else {
+        this.$router.push("/phone");
+      }
+    },
+    check() {
+      if (window.sessionStorage.uid) {
+  
+        this.wyd();
+      }
+    },
+    phone() {
       if (window.sessionStorage.uid) {
         // 跳转更改头像页面
         this.$router.push("my");
-      }else{
+      } else {
         // 未登录跳转注册页面
         this.$router.push("/phone");
       }
@@ -97,7 +128,7 @@ export default {
         "用户帮助",
         "客服热线"
       ],
-    content:"0张"
+      content: "0张"
     };
   }
 };

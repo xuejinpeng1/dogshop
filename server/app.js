@@ -81,13 +81,13 @@ server.get("/login", (req, res) => {
     } else {
       //获取当前登陆用户id
       //result=[{id:2}]
-      var id = result[0].id;
+      // var uid = result[0].uid;
       // console.log(id)
       //将用户id保存session对象中
       //uid当前登录：用户凭证
-      req.session.uid = id;
-      console.log(req.session)
-      res.send({ code: 1, msg: "登录成功" });
+      // req.session.id = result[0].id;
+      // console.log(req.session)
+      res.send(result)
     }
   })
 })
@@ -116,7 +116,12 @@ server.get("/best", (req, res) => {
   pool.query('select ptype,sp_price,sp_price2,sp_address,sp_img,sp_video from shop_pet where bright=?', ["高端"], (err, result) => {
     if (err) throw err;
     res.send(result)
+<<<<<<< Updated upstream
     console.log(result)
+=======
+    // console.log(111)
+    // console.log(result)
+>>>>>>> Stashed changes
   })
 })
 
@@ -129,11 +134,29 @@ server.get("/shop1", (req, res) => {
   })
 })
 
+<<<<<<< Updated upstream
 server.get("/dog", (req, res) => {
   pool.query('select * from dog', (err, result) => {
     if (err) throw err;
     console.log(111)
+=======
+server.get("/dog",(req,res)=>{
+  pool.query('select * from dog',(err,result)=>{
+    if(err)throw err;
+    // console.log(111)
+
+>>>>>>> Stashed changes
     res.send(result)
     // console.log(result)
+  })
+})
+
+server.get("/wyd",(req,res)=>{
+  var $id=req.query.id
+  console.log($id)
+  pool.query('select * from pet_login where id=?',[$id],(err,result)=>{
+    if(err)throw err;
+    // console.log(result)
+    res.send(result)
   })
 })
