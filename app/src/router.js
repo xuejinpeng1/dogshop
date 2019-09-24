@@ -4,6 +4,8 @@ import HelloContainer from "./components/HelloWorld.vue"
 
 //引入自定义组件home(晨)
 import Home from "./components/Home.vue"
+import Dog from "./components/ihome/Dog.vue"
+import Cat from "./components/ihome/cat.vue"
 
 //login(彦东)
 //1:引入自定义组件 login.vue
@@ -15,6 +17,7 @@ import wu from "./components/login/wu.vue"
 import my from "./components/login/my.vue"
 import myself from "./components/main/myself.vue"
 import int from "./components/login/int.vue"
+
 
 
 
@@ -36,7 +39,6 @@ import Counselor from "./components/message/Counselor.vue"
 import Pom from "./components/message/Pom.vue"
 import Ensure from "./components/message/Ensure.vue"
 import Store from "./components/message/Store.vue"
-import Dog from "./components/ihome/Dog.vue"
 import Teddy from "./components/message/Teddy.vue"
 import Td from "./components/message/Td.vue"
 import Golden from "./components/message/Golden.vue"
@@ -57,6 +59,8 @@ export default new Router({
     //http://127.0.01:3001/#/
     { path: '/', component: HelloContainer },
     { path: '/Home', component: Home },
+    { path: '/Dog', component: Dog },
+    { path: '/Cat', component: Cat },
 
     { path: '/phone', component: phone },
     { path: '/int' , component:int},
@@ -82,7 +86,6 @@ export default new Router({
     { path: '/Information', component: Information },
     { path: '/NewsList', component: NewsList },
     { path: '/MessageList', component: MessageList },
-    { path: '/Dog', component: Dog },
     { path: '/Teddy',component: Teddy},
     { path: '/Td',component:Td},
     { path: '/Golden',component:Golden},

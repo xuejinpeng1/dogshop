@@ -2,37 +2,37 @@
   <div class="ihome">
     <div id="top">
       <div style="background:white">
-        <img :src="require('../../assets/icon/kefu.png')" />
+        <img :src="require('../../assets/icon/kefu.png')">
         <mt-search v-model="search" cancel-text="取消" placeholder="搜索宠物、商家、品牌"></mt-search>
-        <img :src="require('../../assets/icon/zhuanfa.png')" />
+        <img :src="require('../../assets/icon/zhuanfa.png')">
       </div>
     </div>
     <mt-swipe :auto="4000">
       <mt-swipe-item v-for="(item,index) in arr" :key="index">
-        <img :src="require(`../../assets/csl/`+item.pimg)" />
+        <img :src="require(`../../assets/csl/`+item.pimg)">
       </mt-swipe-item>
     </mt-swipe>
     <div class="wiki">
       <div>
-        <img :src="require('../../assets/icon/nearby.png')" />
+        <img :src="require('../../assets/icon/nearby.png')">
         <span>附近</span>
       </div>
       <div>
         <router-link :to="{path:  '/dog'}">
-          <img :src="require('../../assets/icon/dog.png')" />
+          <img :src="require('../../assets/icon/dog.png')">
         </router-link>
         <span>狗狗</span>
       </div>
       <div>
-        <img :src="require('../../assets/icon/cat.png')" />
+        <img :src="require('../../assets/icon/cat.png')">
         <span>猫猫</span>
       </div>
       <div>
-        <img :src="require('../../assets/icon/mini.png')" />
+        <img :src="require('../../assets/icon/mini.png')">
         <span>小宠</span>
       </div>
       <div>
-        <img :src="require('../../assets/icon/aquatic.png')" />
+        <img :src="require('../../assets/icon/aquatic.png')">
         <span>水宠</span>
       </div>
     </div>
@@ -71,7 +71,6 @@
           :message2="item.sp_price"
           :img1="`http://127.0.0.1:8080/pet/`+item.img"
           :bright="require('../../assets/icon/none.png')"
-
         ></sale>
       </div>
     </div>
@@ -97,7 +96,7 @@
         </div>
         <div style="margin-bottom:0.1rem">
           进入精品馆
-          <img :src="require('../../assets/icon/right3.png')" />
+          <img :src="require('../../assets/icon/right3.png')">
         </div>
       </div>
     </div>
@@ -123,21 +122,23 @@
         </div>
         <div style="margin-bottom:0.1rem">
           进入高端馆
-          <img :src="require('../../assets/icon/right3.png')" />
+          <img :src="require('../../assets/icon/right3.png')">
         </div>
       </div>
     </div>
-    <br />
-    <div class="ishop">   
-      <ishop
-        v-for="(item,index) of data"
-        :key="index"
-        :sid="item.sid"
-        :sname="item.sname"
-        :simg="`http://127.0.0.1:8080/touxiang/`+item.simg"
-        :itemClick="clickitem"
-        :uname="item.qualifications"
-      ></ishop>
+    <div style="text-align:center">
+      <img :src="require('../../assets/icon/tuijian.png')">
+      <div class="ishop">
+        <ishop
+          v-for="(item,index) of data"
+          :key="index"
+          :sid="item.sid"
+          :sname="item.sname"
+          :simg="`http://127.0.0.1:8080/touxiang/`+item.simg"
+          :itemClick="clickitem"
+          :uname="item.qualifications"
+        ></ishop>
+      </div>
     </div>
   </div>
 </template>
@@ -409,5 +410,8 @@ div.sale ~ div img {
 .ishop {
   display: flex;
   flex-flow: wrap;
+}
+.ishop > img {
+  display: block;
 }
 </style>

@@ -37,9 +37,9 @@ export default {
   methods: {
     check() {
       if (window.sessionStorage.uid) {
-        console.log(111)
+        // console.log(111)
       } else {
-        console.log(222);
+        // console.log(222);
       }
     },
     phone() {

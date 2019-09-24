@@ -35,7 +35,7 @@ p {
   justify-content: center;
   font-weight: bold;
   margin-bottom: 0.3rem;
-  /* padding-top: 0.5rem ; */
+  padding-top: 0.5rem ;
 }
 .title {
   width: 100%;
@@ -46,6 +46,7 @@ p {
   width: 5%;
   height: 5%;
   padding-left: 0.1rem;
+  margin-top:0.1rem
 }
 .title p {
   width: 85%;

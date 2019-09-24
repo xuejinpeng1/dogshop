@@ -24,7 +24,7 @@
     <div class="btn">
       <mt-button class="btn1" type="danger" size="large">分享赢积分</mt-button>
     </div>
-    <img src="../../assets/myself/lan.png" alt="">
+    <img src="../../assets/myself/lan.png" class="big">
   </div>
 </template>
 
@@ -96,6 +96,9 @@ export default {
 /* 完成按钮 */
 .btn {
   padding: 0 0.3rem;
+}
+.big{
+  width:7rem
 }
 .mint-button--danger {
   color: #fff;

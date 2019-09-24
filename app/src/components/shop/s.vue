@@ -188,6 +188,7 @@ export default {
 .place1 {
   padding:0 !important;
   font-size: 0.05rem;
+  margin-left:0.1rem
 }
 .number1 {
   margin-left: 0.25rem;
