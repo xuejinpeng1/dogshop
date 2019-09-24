@@ -28,13 +28,13 @@
   </div>
    <div class="xh1">
       <three
-        v-for="(item,index) in datas1.data1"
+        v-for="(item,index) in datas"
         :key="index"
-        :imgurl1="require('../../assets/shop/111.png')"
-        :id="item.id"
-        :uname1="item.uname1"
-        :money1="item.money1"
-        :time1="item.time1"
+        :sp_img="`http://127.0.0.1:8080/pet/`+item.sp_img"
+        :spid="item.spid"
+        :ptype="item.ptype"
+        :sp_price="item.sp_price"
+        :sp_time="item.sp_time"
       ></three>
       </div>
     
@@ -42,7 +42,7 @@
 </template>
 <script>
 import three from "./three"
-import tp from "../json/three.json"
+// import tp from "../json/three.json"
 export default {
   props: {
     //接收父元素数据
@@ -60,14 +60,24 @@ export default {
   },
   data() {
     return {
-      datas1:tp
+      datas:""
     };
+  },
+  created() {
+    this.shop2();
   },
    methods: {
       clickitem(id){
         console.log(id);
-     } 
-    },
+     },
+     //接口
+     shop2() {
+      var url = "shop2";
+      this.axios.get(url).then(res => {
+         this.datas = res.data;
+      });
+    }
+   },
     components:{
         "three":three
     }

@@ -141,11 +141,11 @@ export default {
     xx(e) {
       if(e.target.nodeName=="DIV"){
         if(e.target.children.length==1){
-          console.log(e.target.children[0].innerHTML)
+          var f=e.target.children[0].innerHTML;
         }else{
-          console.log(e.target.children[0].children[0].innerHTML)
+          var f=e.target.children[0].children[0].innerHTML;
         }
-        this.$router.push('/shop');
+        this.$router.push({path:'/shop',query:{city:f}});
       }     
     }
   }

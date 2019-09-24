@@ -133,6 +133,15 @@ server.get("/shop1", (req, res) => {
     // console.log(result)
   })
 })
+//shop 商家宠物
+server.get("/shop2",(req,res)=>{
+  pool.query('select * from shop_pet',(err,result)=>{
+    if(err)throw err;
+    res.send(result);
+    console.log(result)
+    //select sp_img from shop_pet where sid=1
+  })
+})
 
 <<<<<<< Updated upstream
 server.get("/dog", (req, res) => {

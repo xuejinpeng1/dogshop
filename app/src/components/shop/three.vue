@@ -1,11 +1,11 @@
 <template>
     <div>
-      <div @click="itemClick(id)" class="one">
-        <img :src="imgurl1">
-        <span class="uname1">{{uname1}}</span>
+      <div @click="itemClick(spid)" class="one">
+        <img :src="sp_img">
+        <span class="uname1">{{ptype}}</span>
         <div>
-          <span class="money1">{{money1}}</span>
-          <span class="time1">{{time1}}</span>
+          <span class="money1">{{sp_price}}</span>
+          <span class="time1">{{sp_time}}</span>
         </div>
       </div>
     </div>
@@ -14,11 +14,11 @@
 export default {
   props: {
     //接收父元素数据
-    id: { default: "" },
-    imgurl1: { default: "" },
-    uname1: { type: String, default: "" },
-    money1: { type: String, default: "" },
-    time1: { type: String, default: "" },
+    spid: { default: "" },
+    sp_img: { default: "" },
+    ptype: { type: String, default: "" },
+    sp_price: { default: "" },
+    sp_time: { type: String, default: "" },
     itemClick: { type: Function }
   },
   data() {

@@ -2,7 +2,7 @@
   <div>
    <div class="xiala">
       <div @click="go">
-        <span>全国</span>
+        <span ref="city"></span>
         <img src="../../assets/shop/xiajiantou.png" />
       </div>
       <div @click="go1">
@@ -28,14 +28,22 @@
       </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
     return {
     };
   },
-  methods: {
+  mounted(){
+    var url=window.location.href.split("=")[1];//截取字符串
+    url=decodeURI(url);    //解码
+    var cit=this.$refs.city;
+    cit.innerHTML=url;
+    if(cit.innerHTML=="undefined"){//那页面undefined赋值
+        cit.innerHTML="全国"
+    }
+  },
+  methods: { 
     go(){
       this.$router.push('/Di')
     },
@@ -75,7 +83,7 @@ img {
 /* 下拉框 */
 #nn1,#nn2{
   position: fixed;
-  top:0.7rem;
+  top:0.5rem;
   display: none;
   background:#fff;
   width: 100%;

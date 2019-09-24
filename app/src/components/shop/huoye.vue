@@ -39,22 +39,16 @@ export default {
       this.axios.get(url).then(res => {
         this.data = res.data;
         for (var i = 0; i < this.data.length; i++) {
-          // console.log(res.data[i].qualifications);
           if (res.data[i].qualifications[1] == 1) {
             this.data[i].qualifications = "平台认证";
-            // return ;
           } else if (res.data[i].qualifications[3] == 1) {
-            this.data[i].qualifications = "实地考察";
-            // return;
+            this.data[i].qualifications = "实地考察";    
           } else if (res.data[i].qualifications[5] == 1) {
             this.data[i].qualifications = "已缴押金";
-            // return;
           } else if (res.data[i].qualifications[7] == 1) {
             this.data[i].qualifications = "实名认证";
-            // return;
           }
         }
-        // console.log(JSON.stringify(this.data));
       });
     }
   },
