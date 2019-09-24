@@ -27,7 +27,7 @@ p {
 .page-head {
   display: flex;
   /* position: fixed; */
-  width: 100%;
+  width: 7rem;
   align-items: center; /* 垂直居中 */
   height: 0.5rem;
   color: #000;
@@ -43,11 +43,12 @@ p {
   line-height: 0.5rem;
 }
 .title img {
-  width: 6%;
-  height: 6%;
+  width: 5%;
+  height: 5%;
+  padding-left: 0.1rem;
 }
 .title p {
-  width: 90%;
+  width: 85%;
   text-align: center;
 }
 </style>

@@ -56,24 +56,22 @@ export default {
   padding-left: 0.3rem;
 }
 .X img{
-  width: 1.2rem;
-  height: 1.2rem;;
+  width: 1rem;
+  height: 1rem;
 }
 .X p{
   font-size: 0.3rem;
-  padding: 0.2rem;
+  padding: 0.1rem;
 }
 .XX img{
   margin-left: 90%;
   width: 0.8rem;
   height: 0.8rem;
-  padding: 0.2rem;
 }
 /* 图片 */
 .XXX{
   display: flex;
   flex-wrap: wrap;
-  padding: 0.2rem;
   padding-top: 0;
 }
 </style>

@@ -60,6 +60,7 @@ export default {
 <style scoped>
 
 .xiala{
+  width: 100%;
   display: flex;
   justify-content: space-around;
   font-size: 0.3rem;

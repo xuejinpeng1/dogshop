@@ -39,6 +39,9 @@ import Store from "./components/message/Store.vue"
 import Dog from "./components/ihome/Dog.vue"
 import Teddy from "./components/message/Teddy.vue"
 import Td from "./components/message/Td.vue"
+import Golden from "./components/message/Golden.vue"
+import Gd from "./components/message/Gd.vue"
+import Ennly from "./components/message/Ennly.vue"
 
 
 //shop(金鹏)
@@ -82,6 +85,9 @@ export default new Router({
     { path: '/Dog', component: Dog },
     { path: '/Teddy',component: Teddy},
     { path: '/Td',component:Td},
+    { path: '/Golden',component:Golden},
+    { path: '/Gd',component:Gd},
+    { path: '/Ennly',component:Ennly},  
 
     { path: '/Shop', component: Shop },
     { path: '/Youxuan', component: Youxuan },

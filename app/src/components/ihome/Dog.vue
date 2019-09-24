@@ -14,6 +14,7 @@
 </template>
 <script>
 import TitleBar from "./../message/TitleBar.vue";
+import js from "../../assets/js/jquery-3.2.1.js";
 export default {
   components: {
     titleBar: TitleBar

@@ -151,6 +151,7 @@ server.get("/dog",(req,res)=>{
   })
 })
 
+<<<<<<< Updated upstream
 server.get("/wyd",(req,res)=>{
   var $id=req.query.id
   console.log($id)
@@ -158,5 +159,12 @@ server.get("/wyd",(req,res)=>{
     if(err)throw err;
     // console.log(result)
     res.send(result)
+=======
+server.get("/Ennly",(req,res)=>{
+  pool.query('select * from pet_details',(err,result)=>{
+    if(err)throw err;
+    res.send(result)
+    console.log(result)
+>>>>>>> Stashed changes
   })
 })
