@@ -20,7 +20,7 @@
 export default {
   methods: {
     login() {
-      this.$router.push("/login");
+      this.$router.go(-1);
     }
   }
 };

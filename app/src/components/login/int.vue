@@ -24,7 +24,7 @@
     <div class="btn">
       <mt-button class="btn1" type="danger" size="large">分享赢积分</mt-button>
     </div>
-    <img src="../../assets/myself/lan.png" class="big">
+    <img src="../../assets/myself/lan.png" alt="">
   </div>
 </template>
 
@@ -32,7 +32,7 @@
 export default {
     methods: {
         myself(){
-            this.$router.push("myself")
+            this.$router.go(-1)
         }
     },
 };
@@ -96,9 +96,6 @@ export default {
 /* 完成按钮 */
 .btn {
   padding: 0 0.3rem;
-}
-.big{
-  width:7rem
 }
 .mint-button--danger {
   color: #fff;

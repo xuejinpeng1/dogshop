@@ -155,7 +155,7 @@ export default {
       nn1.style.display = nn1.style.display == "none" ? "block" : "none";
     },
     jump: function() {
-      this.$router.push("/Mall")
+      this.$router.go(-1)
     }
   }
 };

@@ -1,0 +1,28 @@
+
+/* 1.最外层父元素：弹性布局 */
+.product-app{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    padding: 0.3rem;
+    align-items: center;
+}
+/* 2.修饰当前宠物35% */
+.goods-item{
+    width: 30%;
+    margin: 2px 0;
+    box-sizing:border-box;    /*并排的带边框的框：*/
+    display: flex;
+    flex-direction: column;   /*规定灵活项目的方向*/
+    min-height: 30%;
+    padding: 0.2rem;  
+}
+/* 3.修饰当前商品中的图片 */
+.goods-item img{
+    width: 100%;
+}
+.goods-item p {
+  margin: 0;
+  font-size: 0.3rem;
+}
+

@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="right">
-        <img :src="require(`../../assets/shop/${star}`)" alt>
+        <img :src="require(`../../assets/shop/${star}`)">
         <span>{{appraise}}</span>
         <span>好评数</span>
       </div>

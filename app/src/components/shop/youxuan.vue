@@ -31,6 +31,7 @@ export default {
   created() {
     this.shop1();
   },
+  mounted() {},
   methods: {
     clickitem(id) {
       console.log(id);
@@ -38,24 +39,32 @@ export default {
     shop1() {
       var url = "shop1";
       this.axios.get(url).then(res => {
+        var xx = [];
         this.data = res.data;
-        console.log(this.data)
         for (var i = 0; i < this.data.length; i++) {
-          
           if (res.data[i].qualifications[1] == 1) {
             this.data[i].qualifications = "平台认证";
-            
           } else if (res.data[i].qualifications[3] == 1) {
             this.data[i].qualifications = "实地考察";
-            
           } else if (res.data[i].qualifications[5] == 1) {
             this.data[i].qualifications = "已缴押金";
-            
           } else if (res.data[i].qualifications[7] == 1) {
             this.data[i].qualifications = "实名认证";
           }
-        } 
-        
+          var url1 = window.location.href.split("=")[1]; //截取字符串
+          url1 = decodeURI(url1); //解码
+         //刚开始没有获取是一个undefined
+          if(url1=="undefined"||url1=="全国"){
+            xx.push(i)
+          }else if (this.data[i].address.search(url1)!==-1) {//对应城市
+            xx.push(i);
+          }
+        }
+        var aa = [];
+        for (var i = 0; i < xx.length; i++) { 
+          aa.push(this.data[xx[i]])
+        }
+         this.data=aa
       });
     }
   },

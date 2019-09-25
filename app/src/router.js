@@ -4,19 +4,22 @@ import HelloContainer from "./components/HelloWorld.vue"
 
 //引入自定义组件home(晨)
 import Home from "./components/Home.vue"
-import Dog from "./components/ihome/Dog.vue"
+import Dog from "./components/ihome/dog.vue"
 import Cat from "./components/ihome/cat.vue"
+import Mini from "./components/ihome/mini.vue"
+import Aquatic from "./components/ihome/aquatic.vue"
 
 //login(彦东)
 //1:引入自定义组件 login.vue
 import login from "./components/login/login.vue"
 import forget from "./components/login/forget.vue"
-// import mine from "./components/login/mine.vue"(放到main下的/message,接口删掉了)
 import phone from "./components/login/phone.vue"
 import wu from "./components/login/wu.vue"
 import my from "./components/login/my.vue"
 import myself from "./components/main/myself.vue"
 import int from "./components/login/int.vue"
+import protocol from "./components/login/protocol.vue"
+import att from "./components/login/att.vue"
 
 
 
@@ -61,14 +64,18 @@ export default new Router({
     { path: '/Home', component: Home },
     { path: '/Dog', component: Dog },
     { path: '/Cat', component: Cat },
+    { path: '/Mini', component: Mini },
+    { path: '/Aquatic', component: Aquatic },
 
     { path: '/phone', component: phone },
+    { path: '/protocol', component: protocol },
     { path: '/int' , component:int},
     { path: '/forget', component: forget },
     { path: '/myself', component: myself },
     { path: '/login', component: login },
     { path: '/my', component: my },
     { path: '/wu', component: wu },
+    { path: '/att', component: att },
 
     { path: '/MiniFive', component: MiniFive },
     { path: '/MiniTwo', component: MiniTwo },

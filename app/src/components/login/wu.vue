@@ -22,13 +22,13 @@ export default {
   },
     methods:{
         myself(){
-           this.$router.push("/myself");
+           this.$router.go(-1);
         }
     },
     created() {
       var url=document.location.href;
       var tag=url.split("=")[1];
-      console.log(tag)
+      // console.log(tag)
       if(tag==0){
         var h3 = document.getElementById("h3");
         this.content=this.content[0]

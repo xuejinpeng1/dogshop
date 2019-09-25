@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     myself(){
-      this.$router.push("/myself")
+      this.$router.go(-1);
     },
     tan() {
       this.sheetVisible = true;

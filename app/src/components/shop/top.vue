@@ -68,13 +68,12 @@ export default {
 <style scoped>
 
 .xiala{
-  width: 100%;
   display: flex;
-  justify-content: space-around;
   font-size: 0.3rem;
+  width:7.2rem;
 }
 .xiala > div {
-  padding: 0.1rem 0.6rem;;
+  padding:0.2rem 0.6rem;
 }
 img {
   width: 0.25rem;
@@ -83,7 +82,7 @@ img {
 /* 下拉框 */
 #nn1,#nn2{
   position: fixed;
-  top:0.5rem;
+  top:0.6rem;
   display: none;
   background:#fff;
   width: 100%;
@@ -91,6 +90,7 @@ img {
   border-bottom:0.1rem solid #ddd;
 }
 #nn1>p,#nn2>p{
-  padding:0.1rem;
+  padding:0.3rem;
+  margin:0;
 }
 </style>

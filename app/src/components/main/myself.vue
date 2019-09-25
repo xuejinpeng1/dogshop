@@ -80,9 +80,6 @@ export default {
           // 更改优惠券
           var p1 = document.getElementsByClassName("p1")[0];
           this.content=`${this.name.iquan}张`;
-        
-
-
       });
     },
     int() {

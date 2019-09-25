@@ -11,10 +11,10 @@
           <mt-cell title="天津"></mt-cell>
           <mt-cell title="上海"></mt-cell>
           <mt-cell title="广州"></mt-cell>
-          <mt-cell title="深圳"></mt-cell>
+          <mt-cell title="杭州"></mt-cell>
           <mt-cell title="武汉"></mt-cell>
           <mt-cell title="成都"></mt-cell>
-          <mt-cell title="重庆"></mt-cell>
+          <mt-cell title="四川"></mt-cell>
         </mt-index-section>
       <mt-index-section index="A">
         <mt-cell title="鞍山"></mt-cell>
@@ -95,7 +95,7 @@
         <mt-cell title="日照"></mt-cell>
       </mt-index-section>
       <mt-index-section index="S">
-        <mt-cell title="石家庄"></mt-cell>
+        <mt-cell title="四川"></mt-cell>
         <mt-cell title="沈阳"></mt-cell>
         <mt-cell title="厦门"></mt-cell>
         <mt-cell title="深圳"></mt-cell>
@@ -145,7 +145,7 @@ export default {
         }else{
           var f=e.target.children[0].children[0].innerHTML;
         }
-        this.$router.push({path:'/shop',query:{city:f}});
+        this.$router.push({path:'/home',query:{city:f}});
       }     
     }
   }

@@ -95,6 +95,7 @@ export default {
           this.footer[i].isSelect = false;
         }
       }
+      window.scroll(0,0)
     }
   },
   components: {

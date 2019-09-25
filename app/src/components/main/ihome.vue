@@ -24,25 +24,31 @@
         <span>狗狗</span>
       </div>
       <div>
-        <img :src="require('../../assets/icon/cat.png')">
+        <router-link :to="{path:  '/cat'}">
+          <img :src="require('../../assets/icon/cat.png')">
+        </router-link>
         <span>猫猫</span>
       </div>
       <div>
-        <img :src="require('../../assets/icon/mini.png')">
+        <router-link :to="{path:  '/mini'}">
+          <img :src="require('../../assets/icon/mini.png')">
+        </router-link>
         <span>小宠</span>
       </div>
       <div>
-        <img :src="require('../../assets/icon/aquatic.png')">
+        <router-link :to="{path:  '/aquatic'}">
+          <img :src="require('../../assets/icon/aquatic.png')">
+        </router-link>
         <span>水宠</span>
       </div>
     </div>
     <div>
-      <ititle
+      <i-itle
         :top="require('../../assets/icon/icon1.png')"
         tips="更多"
         :arrow="require('../../assets/icon/right1.png')"
         class="gary"
-      ></ititle>
+      ></i-itle>
       <div class="sale">
         <sale
           v-for="(item,index) in onsale"
@@ -57,12 +63,12 @@
       </div>
     </div>
     <div>
-      <ititle
+      <i-itle
         :top="require('../../assets/icon/icon2.png')"
         tips="更多"
         :arrow="require('../../assets/icon/right1.png')"
         class="gary"
-      ></ititle>
+      ></i-itle>
       <div class="sale">
         <sale
           v-for="(item,index) in onnew"
@@ -76,12 +82,12 @@
     </div>
     <div>
       <div>
-        <ititle
+        <i-itle
           :top="require('../../assets/icon/icon3.png')"
           tips="平台审核,品质认证"
           :arrow="require('../../assets/icon/right1.png')"
           class="yellow"
-        ></ititle>
+        ></i-itle>
         <div class="sale change">
           <sale
             v-for="(item,index) in onbetter"
@@ -102,12 +108,12 @@
     </div>
     <div>
       <div>
-        <ititle
+        <i-itle
           :top="require('../../assets/icon/icon4.png')"
           tips="一宠一芯、纯种保证、30天保障"
           :arrow="require('../../assets/icon/right1.png')"
           class="yellow"
-        ></ititle>
+        ></i-itle>
         <div class="sale change">
           <sale
             v-for="(item,index) in onbest"
@@ -144,8 +150,9 @@
 </template>
 <script>
 import Sale from "../ihome/sale.vue";
-import iTitle from "../ihome/title.vue";
+import itle from "../ihome/xitle.vue";
 import iShop from "../shop/top2.vue";
+import "../../assets/a.css"
 export default {
   created() {
     // 当前组建创建成功回调函数
@@ -284,7 +291,7 @@ export default {
   },
   components: {
     sale: Sale,
-    ititle: iTitle,
+    'i-itle': itle,
     ishop: iShop
   }
 };
@@ -359,7 +366,8 @@ export default {
   align-items: center;
   margin-top: 5%;
 }
-.wiki img {
+.wiki img,
+.wiki a {
   width: 0.8rem;
   height: 0.8rem;
   margin-bottom: 18%;

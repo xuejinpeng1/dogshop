@@ -5,7 +5,7 @@
     <!-- 快速登录 -->
     <div class="head">
       <h3>快速登录</h3>
-      <img class="img1" @click="mine" src="../../assets/myself/10.png" alt>
+      <img class="img1" @click="mine" src="../../assets/myself/10.png" alt />
     </div>
     <!--手机号输入框-->
     <mt-field class="name" label="手机 :" placeholder="请输入手机号"></mt-field>
@@ -18,9 +18,9 @@
     <!-- 其他方式登录 -->
     <div class="q">
       <p>———— 其他方式登录 ————</p>
-      <img class="q_img" src="../../assets/myself/wx.png" alt>
-      <img class="q_img" src="../../assets/myself/QQ.png" alt>
-      <img class="q_img" src="../../assets/myself/zfb.png" alt>
+      <img class="q_img" src="../../assets/myself/wx.png" alt />
+      <img class="q_img" src="../../assets/myself/QQ.png" alt />
+      <img class="q_img" src="../../assets/myself/zfb.png" alt />
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@
 export default {
   methods: {
     mine() {
-      this.$router.push("/home");
+      this.$router.push("/myself");
     },
     login() {
       this.$router.push("/login");
@@ -62,8 +62,7 @@ export default {
   margin-top: 0.7rem;
 }
 /* 手机号输入框************************* */
-.name,
-.pwd {
+.name,.pwd {
   border-bottom: 0.05rem solid #f4f4f4;
 }
 .name >>> .mint-cell-wrapper {
@@ -87,10 +86,9 @@ export default {
   margin-bottom: 0.5rem;
   margin-right: 0.3rem;
 }
-.s1,
-.s2 {
-  position: relative;
-  top: 0.2rem;
+.s1,.s2{
+    position: relative;
+    top:0.2rem;
 }
 /*登录按钮 */
 .btn {
@@ -105,7 +103,7 @@ export default {
   position: absolute;
   bottom: 0;
   transform: translateX(18%);
-  margin-bottom: 1rem;
+  margin-bottom:1rem;
 }
 p {
   font-size: 0.3rem;

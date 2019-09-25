@@ -37,13 +37,13 @@ export default {
   methods: {
     check() {
       if (window.sessionStorage.uid) {
-        // console.log(111)
+        console.log("以登录")
       } else {
-        // console.log(222);
+        console.log("未登录");
       }
     },
     phone() {
-      this.$router.push("/phone");
+      this.$router.go(-1);
     },
     forget() {
       this.$router.push("/forget");
@@ -79,7 +79,7 @@ export default {
           this.$messagebox("消息", "手机号或密码有误");
         } else {
           // 8: 成功 跳转
-          console.log(res.data)
+          // console.log(res.data)
           window.sessionStorage.uid = res.data[0].id;
           console.log(window.sessionStorage.uid)
           this.$router.push("/Home");

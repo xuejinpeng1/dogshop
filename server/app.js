@@ -138,7 +138,7 @@ server.get("/shop3", (req, res) => {
   var spid = req.query.spid;
   pool.query('select ptype,sp_price,sp_video,sp_img,sp_time from shop_pet where spid=?', spid, (err, result) => {
     if (err) throw err;
-    console.log(result)
+    // console.log(result)
     res.send(result);
     //select sp_img from shop_pet where sid=1
   })
@@ -147,6 +147,24 @@ server.get("/shop3", (req, res) => {
 
 server.get("/dog", (req, res) => {
   pool.query('select * from dog', (err, result) => {
+    if (err) throw err;
+    res.send(result)
+  })
+})
+server.get("/cat", (req, res) => {
+  pool.query('select * from cat', (err, result) => {
+    if (err) throw err;
+    res.send(result)
+  })
+})
+server.get("/mini", (req, res) => {
+  pool.query('select * from mini', (err, result) => {
+    if (err) throw err;
+    res.send(result)
+  })
+})
+server.get("/aquatic", (req, res) => {
+  pool.query('select * from aquatic', (err, result) => {
     if (err) throw err;
     res.send(result)
   })
