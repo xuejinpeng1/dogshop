@@ -1,7 +1,7 @@
 <template>
   <div @click="itemClick(sid)">
     <!--h3>Message.vue 消息组件</h3-->
-    <div class="rootstyle">
+    <div class="rootstyle" @click="r1">
       <div class="left">
         <img :src="simg" class="imgstyle">
         <p class="uname1">{{uname}}</p>
@@ -90,6 +90,11 @@ export default {
     clickitem(id) {
       console.log(id);
     },
+    r1(){
+      var rr=this.data;
+      // console.log(rr)
+      this.$router.push({path:'/Store',query:{number:rr}});
+    },
     //接口
     shop2() {
       var url = "shop2";
@@ -105,6 +110,7 @@ export default {
               res.data[i].img = res.data[i].sp_video;
             }
             this.datas1 = res.data;
+            
           }
         });
         this.axios.get("shop3", { params: { spid: res.data[1] } }).then(res => {

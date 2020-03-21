@@ -4,7 +4,7 @@ import HelloContainer from "./components/HelloWorld.vue"
 
 //引入自定义组件home(晨)
 import Home from "./components/Home.vue"
-import Dog from "./components/ihome/dog.vue"
+// import Dog from "./components/ihome/dog.vue"
 import Cat from "./components/ihome/cat.vue"
 import Mini from "./components/ihome/mini.vue"
 import Aquatic from "./components/ihome/aquatic.vue"
@@ -62,7 +62,7 @@ export default new Router({
     //http://127.0.01:3001/#/
     { path: '/', component: HelloContainer },
     { path: '/Home', component: Home },
-    { path: '/Dog', component: Dog },
+    // { path: '/Dog', component: Dog },
     { path: '/Cat', component: Cat },
     { path: '/Mini', component: Mini },
     { path: '/Aquatic', component: Aquatic },
